@@ -213,9 +213,10 @@
   footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:.8rem;position:relative;z-index:1}
   footer em{color:var(--accent);font-style:normal}
 
-  /* REVEAL */
-  .r{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-  .r.v{opacity:1;transform:none}
+  /* REVEAL - always visible; JS adds fade-in as enhancement */
+  .r { opacity: 1; transform: none; }
+  .r.will-animate { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+  .r.will-animate.visible { opacity: 1; transform: none; }
 
   /* TOAST */
   .toast{position:fixed;bottom:28px;right:28px;z-index:9000;background:var(--surface);border:1px solid var(--accent3);border-radius:var(--r);padding:13px 22px;font-size:.88rem;font-weight:500;color:var(--text);opacity:0;transform:translateY(16px);transition:.4s;pointer-events:none}
@@ -686,7 +687,7 @@
         <div class="socials">
           <a href="https://github.com/yourusername" target="_blank" class="social-a"><span class="s-ico">🐙</span> github.com/yourusername</a>
           <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-a"><span class="s-ico">💼</span> linkedin.com/in/yourusername</a>
-          <a href="mailto:youremail@example.com" class="social-a"><span class="s-ico">✉️</span> youremail@example.com</a>
+          <a href="/cdn-cgi/l/email-protection#136a7c6661767e727a7f53766b727e637f763d707c7e" class="social-a"><span class="s-ico">✉️</span> <span class="__cf_email__" data-cfemail="dca5b3a9aeb9b1bdb5b09cb9a4bdb1acb0b9f2bfb3b1">[email&#160;protected]</span></a>
           <a href="resume.pdf" download class="social-a"><span class="s-ico">📄</span> Download Resume</a>
         </div>
       </div>
@@ -719,7 +720,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* CURSOR */
 const cur = document.getElementById('cursor');
 document.addEventListener('mousemove', e => { cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px'; });
@@ -744,17 +745,36 @@ document.querySelectorAll('.ml').forEach(a => a.addEventListener('click', () => 
   document.body.style.overflow = '';
 }));
 
-/* SCROLL REVEAL */
-const io = new IntersectionObserver(entries => {
-  entries.forEach((en, i) => {
-    if (en.isIntersecting) { setTimeout(() => en.target.classList.add('v'), i * 70); io.unobserve(en.target); }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.r').forEach(el => io.observe(el));
+/* SCROLL REVEAL - opt-in animation, content always visible as fallback */
+if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+  const revealEls = document.querySelectorAll('.r');
+  revealEls.forEach(el => el.classList.add('will-animate'));
 
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('#hero .r').forEach((el,i) => setTimeout(() => el.classList.add('v'), 180 + i*140));
-});
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 60);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Immediately reveal hero and anything already on screen
+  document.querySelectorAll('#hero .r').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 120 + i * 120);
+  });
+  setTimeout(() => {
+    document.querySelectorAll('.r.will-animate:not(.visible)').forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight + 50) {
+        el.classList.add('visible');
+      }
+    });
+  }, 200);
+}
 
 /* ACTIVE NAV */
 const secs = document.querySelectorAll('section[id]');
@@ -770,12 +790,4 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.proj-card').forEach(card => {
-      card.style.display = (f === 'all' || card.dataset.cat === f) ? 'flex' : 'none';
-    });
-  });
-});
-
-/* CONTACT FORM */
-document.getElementById('contactForm'
+    const

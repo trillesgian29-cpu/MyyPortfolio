@@ -1,17 +1,19 @@
-/* --- Gallery Section Styles --- */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 16px;
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
 }
-.gallery img {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  cursor: pointer;
-  transition: transform .3s, box-shadow .3s;
+
+/* Navigation */
+nav {
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
 }
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(124,109,250,.25);
-}
+nav

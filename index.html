@@ -3,193 +3,779 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Gian</title>
-  <script src="js/script.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
+  <title>Portfolio — Gian Carlo | CpE Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:#080810; --bg2:#0e0e18; --surface:#14141e; --surface2:#1a1a26;
+    --border:rgba(255,255,255,0.07); --accent:#6c63ff; --accent2:#ff6b9d;
+    --accent3:#00d4aa; --text:#eaeaf5; --muted:#72728a;
+    --glow:rgba(108,99,255,0.22); --r:14px; --nav-h:68px;
+    --head:'Syne',sans-serif; --body:'DM Sans',sans-serif;
+  }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:var(--body); font-size:16px; line-height:1.65; overflow-x:hidden; }
+  ::-webkit-scrollbar{width:4px} ::-webkit-scrollbar-track{background:var(--bg)} ::-webkit-scrollbar-thumb{background:var(--accent);border-radius:99px}
+
+  /* CURSOR */
+  .cursor{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--accent);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+  .cursor.big{width:38px;height:38px;background:rgba(108,99,255,.2)}
+  @media(hover:none){.cursor{display:none}}
+
+  /* NOISE + MESH */
+  body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.025}
+  .mesh{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .mesh b{position:absolute;border-radius:50%;filter:blur(90px);animation:drift 16s ease-in-out infinite alternate}
+  .mesh b:nth-child(1){width:550px;height:550px;top:-180px;left:-180px;background:var(--accent);opacity:.14}
+  .mesh b:nth-child(2){width:450px;height:450px;bottom:-120px;right:-120px;background:var(--accent2);opacity:.12;animation-delay:-8s}
+  .mesh b:nth-child(3){width:300px;height:300px;top:45%;left:55%;background:var(--accent3);opacity:.08;animation-delay:-4s}
+  @keyframes drift{to{transform:translate(30px,25px) scale(1.08)}}
+
+  /* LAYOUT */
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px;position:relative;z-index:1}
+  section{padding:90px 0}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:200;transition:background .3s,border .3s}
+  nav.scrolled{background:rgba(8,8,16,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+  .nav-in{max-width:1080px;margin:0 auto;padding:0 22px;height:100%;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--head);font-weight:800;font-size:1.25rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.875rem;font-weight:500;letter-spacing:.02em;transition:color .2s;position:relative}
+  .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--accent);border-radius:99px;transition:width .3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--text)}
+  .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+  .nav-cta{padding:8px 18px;border-radius:99px;font-size:.82rem;font-weight:600;background:linear-gradient(135deg,var(--accent),#9b6bff);color:#fff;text-decoration:none;transition:.25s;box-shadow:0 0 18px var(--glow)}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 0 32px var(--glow)}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+  .burger span{width:22px;height:2px;background:var(--text);border-radius:99px;transition:.3s}
+  .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.open span:nth-child(2){opacity:0}
+  .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mob-menu{position:fixed;inset:0;z-index:190;background:rgba(8,8,16,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;list-style:none;opacity:0;pointer-events:none;transition:opacity .3s}
+  .mob-menu.open{opacity:1;pointer-events:all}
+  .mob-menu a{font-family:var(--head);font-size:2rem;font-weight:700;color:var(--text);text-decoration:none;transition:color .2s}
+  .mob-menu a:hover{color:var(--accent)}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:7px;padding:11px 24px;border-radius:var(--r);font-family:var(--body);font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;border:none;transition:.25s}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),#9b6bff);color:#fff;box-shadow:0 0 22px var(--glow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 40px var(--glow)}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+  /* SECTION HEADER */
+  .sec-head{text-align:center;margin-bottom:56px}
+  .sec-tag{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+  h2{font-family:var(--head);font-size:clamp(1.75rem,3.2vw,2.6rem);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+  .sec-sub{color:var(--muted);margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;font-size:.95rem}
+
+  /* HERO */
+  #hero{min-height:100vh;display:flex;align-items:center;padding:0}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center;padding-top:var(--nav-h)}
+  .hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.28);border-radius:99px;padding:5px 14px;font-size:.78rem;color:var(--accent);font-weight:500;letter-spacing:.04em;margin-bottom:20px}
+  .hero-pill .dot{width:7px;height:7px;background:var(--accent3);border-radius:50%;animation:blink 2s infinite}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+  h1{font-family:var(--head);font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;line-height:1.08;letter-spacing:-.025em;margin-bottom:18px}
+  .grad{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .hero-sub{color:var(--muted);font-size:1rem;max-width:430px;margin-bottom:32px;line-height:1.78}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px}
+  .hero-badges{display:flex;gap:10px;flex-wrap:wrap}
+  .badge{display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:.78rem;color:var(--muted);font-weight:500}
+  .hero-visual{display:flex;justify-content:center;align-items:center;position:relative}
+  .av-wrap{position:relative}
+  .av-ring{width:300px;height:300px;border-radius:50%;background:conic-gradient(var(--accent),var(--accent2),var(--accent3),var(--accent));padding:3px;animation:spin 10s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .av-inner{width:100%;height:100%;border-radius:50%;background:var(--surface);display:flex;align-items:center;justify-content:center;animation:spin 10s linear infinite reverse}
+  .av-card{position:absolute;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:10px 14px;font-size:.78rem;font-weight:600;backdrop-filter:blur(10px);animation:float 3.5s ease-in-out infinite;white-space:nowrap}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .av-card.c1{bottom:10px;right:-20px}
+  .av-card.c2{top:30px;left:-30px;animation-delay:-1.5s}
+  .scroll-down{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--muted);font-size:.7rem;letter-spacing:.1em}
+  .scroll-down .arr{animation:bob 1.8s ease-in-out infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+  /* ABOUT */
+  #about{background:var(--bg2)}
+  .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:center}
+  .about-photo{aspect-ratio:3/4;background:var(--surface);border-radius:20px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .photo-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0,rgba(8,8,16,.9),transparent);padding:18px;font-size:.76rem;color:var(--muted);text-align:center}
+  .about-photo svg{width:55%;opacity:.25}
+  .about-content h3{font-family:var(--head);font-size:1.5rem;font-weight:700;margin-bottom:14px}
+  .about-content p{color:var(--muted);margin-bottom:14px;font-size:.94rem}
+  .about-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+  .about-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 12px;text-align:center}
+  .about-card .num{font-family:var(--head);font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .about-card .lbl{font-size:.72rem;color:var(--muted);margin-top:3px}
+  .obj-box{margin-top:22px;background:rgba(108,99,255,.08);border:1px solid rgba(108,99,255,.25);border-radius:var(--r);padding:18px 20px}
+  .obj-box h4{font-family:var(--head);font-size:.85rem;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:.05em}
+  .obj-box p{color:var(--muted);font-size:.88rem;margin:0}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .skill-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:.3s;position:relative;overflow:hidden}
+  .skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(0);transform-origin:left;transition:.3s}
+  .skill-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 10px 36px rgba(108,99,255,.15)}
+  .skill-card:hover::before{transform:scaleX(1)}
+  .skill-card .ico{font-size:1.8rem;margin-bottom:12px}
+  .skill-card h3{font-family:var(--head);font-size:.9rem;font-weight:700;margin-bottom:14px;letter-spacing:.03em}
+  .tags{display:flex;flex-wrap:wrap;gap:7px}
+  .tag{background:rgba(108,99,255,.1);border:1px solid rgba(108,99,255,.2);color:var(--accent);border-radius:6px;padding:3px 9px;font-size:.74rem;font-weight:500}
+  .tag.g{background:rgba(0,212,170,.1);border-color:rgba(0,212,170,.2);color:var(--accent3)}
+  .tag.p{background:rgba(255,107,157,.1);border-color:rgba(255,107,157,.2);color:var(--accent2)}
+  .skills-note{margin-top:32px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r);padding:18px 22px;display:flex;align-items:flex-start;gap:14px}
+  .skills-note p{color:var(--muted);font-size:.88rem}
+  .skills-note strong{color:var(--text)}
+
+  /* PROJECTS */
+  #projects{background:var(--bg2)}
+  .proj-filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:36px}
+  .filter-btn{padding:7px 18px;border-radius:99px;font-size:.8rem;font-weight:600;border:1px solid var(--border);background:var(--surface);color:var(--muted);cursor:pointer;transition:.2s;font-family:var(--body)}
+  .filter-btn.active,.filter-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(108,99,255,.1)}
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .proj-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+  .proj-card:hover{transform:translateY(-5px);box-shadow:0 18px 55px rgba(0,0,0,.4)}
+  .proj-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#16162a,#0c0c18)}
+  .proj-thumb .bg-num{font-family:var(--head);font-size:5rem;font-weight:800;color:var(--accent);opacity:.05;user-select:none;position:absolute}
+  .proj-thumb .main-ico{font-size:2.6rem;position:relative;z-index:1}
+  .proj-type{position:absolute;top:10px;right:10px;background:rgba(108,99,255,.2);border:1px solid rgba(108,99,255,.3);color:var(--accent);border-radius:99px;padding:3px 11px;font-size:.7rem;font-weight:600}
+  .proj-type.lab{background:rgba(0,212,170,.15);border-color:rgba(0,212,170,.3);color:var(--accent3)}
+  .proj-body{padding:20px;flex:1;display:flex;flex-direction:column}
+  .proj-body h3{font-family:var(--head);font-size:1rem;font-weight:700;margin-bottom:8px}
+  .proj-body p{color:var(--muted);font-size:.86rem;flex:1;margin-bottom:16px;line-height:1.6}
+  .proj-stack{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .proj-stack span{background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:2px 8px;font-size:.72rem;color:var(--muted)}
+  .proj-actions{display:flex;gap:8px}
+  .proj-btn{flex:1;text-align:center;padding:8px;border-radius:8px;font-size:.78rem;font-weight:600;text-decoration:none;transition:.2s;border:none;cursor:pointer;font-family:var(--body)}
+  .pb-primary{background:var(--accent);color:#fff}
+  .pb-primary:hover{background:#8a7dff}
+  .pb-ghost{background:var(--bg);border:1px solid var(--border);color:var(--muted)}
+  .pb-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* LAB ACTIVITIES */
+  .lab-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .lab-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:22px;transition:.3s;position:relative;overflow:hidden}
+  .lab-card:hover{border-color:var(--accent3);transform:translateY(-3px);box-shadow:0 10px 32px rgba(0,212,170,.1)}
+  .lab-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--accent3);border-radius:0 3px 3px 0}
+  .lab-num{font-size:.72rem;font-weight:700;color:var(--accent3);letter-spacing:.1em;margin-bottom:8px}
+  .lab-card h3{font-family:var(--head);font-size:.95rem;font-weight:700;margin-bottom:8px}
+  .lab-card p{color:var(--muted);font-size:.84rem;line-height:1.6;margin-bottom:14px}
+  .lab-outcome{display:inline-flex;align-items:center;gap:5px;font-size:.74rem;color:var(--accent3);font-weight:600;background:rgba(0,212,170,.1);border-radius:6px;padding:3px 9px}
+
+  /* CERTIFICATES */
+  #certificates{background:var(--bg2)}
+  .cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px;transition:.3s;display:flex;flex-direction:column;gap:14px}
+  .cert-card:hover{border-color:var(--accent2);transform:translateY(-3px);box-shadow:0 10px 32px rgba(255,107,157,.1)}
+  .cert-header{display:flex;align-items:flex-start;gap:14px}
+  .cert-ico{width:46px;height:46px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:rgba(255,107,157,.1);border:1px solid rgba(255,107,157,.2)}
+  .cert-meta h3{font-family:var(--head);font-size:.9rem;font-weight:700;margin-bottom:4px}
+  .cert-issuer{font-size:.78rem;color:var(--muted)}
+  .cert-date{font-size:.74rem;font-weight:600;color:var(--accent2);letter-spacing:.04em}
+  .cert-skills-row{display:flex;flex-wrap:wrap;gap:6px}
+  .cert-skill{background:rgba(255,107,157,.08);border:1px solid rgba(255,107,157,.18);border-radius:5px;padding:2px 8px;font-size:.72rem;color:var(--accent2)}
+  .cert-link{display:inline-flex;align-items:center;gap:5px;font-size:.78rem;font-weight:600;color:var(--accent);text-decoration:none;transition:.2s}
+  .cert-link:hover{color:var(--accent2)}
+
+  /* EXPERIENCE */
+  .timeline{max-width:700px;margin:0 auto;padding-left:26px;position:relative}
+  .timeline::before{content:'';position:absolute;left:0;top:8px;bottom:0;width:2px;background:var(--border)}
+  .t-item{position:relative;margin-bottom:44px}
+  .t-item::before{content:'';position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(108,99,255,.4)}
+  .t-date{font-size:.76rem;font-weight:700;color:var(--accent);letter-spacing:.05em;margin-bottom:6px}
+  .t-item h3{font-family:var(--head);font-size:1.05rem;font-weight:700}
+  .t-where{font-size:.86rem;color:var(--muted);margin-bottom:10px}
+  .t-item p{color:var(--muted);font-size:.88rem}
+
+  /* CONTACT */
+  #contact{background:var(--bg2)}
+  .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:56px;align-items:start}
+  .contact-left h3{font-family:var(--head);font-size:1.35rem;font-weight:700;margin-bottom:12px}
+  .contact-left p{color:var(--muted);font-size:.92rem;margin-bottom:28px}
+  .socials{display:flex;flex-direction:column;gap:12px}
+  .social-a{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 16px;text-decoration:none;color:var(--muted);font-size:.88rem;transition:.2s}
+  .social-a:hover{border-color:var(--accent);color:var(--accent)}
+  .s-ico{font-size:1.05rem;width:22px;text-align:center}
+  .c-form{display:flex;flex-direction:column;gap:14px}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .f-grp{display:flex;flex-direction:column;gap:5px}
+  label{font-size:.76rem;font-weight:600;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+  input,textarea,select{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:12px 15px;color:var(--text);font-family:var(--body);font-size:.9rem;outline:none;transition:.2s;resize:vertical}
+  input:focus,textarea:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,99,255,.15)}
+  input::placeholder,textarea::placeholder{color:var(--muted)}
+  option{background:var(--surface2)}
+  .submit-btn{justify-content:center;width:100%;padding:14px;font-size:.95rem}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:.8rem;position:relative;z-index:1}
+  footer em{color:var(--accent);font-style:normal}
+
+  /* REVEAL */
+  .r{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+  .r.v{opacity:1;transform:none}
+
+  /* TOAST */
+  .toast{position:fixed;bottom:28px;right:28px;z-index:9000;background:var(--surface);border:1px solid var(--accent3);border-radius:var(--r);padding:13px 22px;font-size:.88rem;font-weight:500;color:var(--text);opacity:0;transform:translateY(16px);transition:.4s;pointer-events:none}
+  .toast.show{opacity:1;transform:none}
+
+  /* RESPONSIVE */
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .hero-sub,.hero-btns,.hero-badges{margin-left:auto;margin-right:auto}
+    .hero-btns,.hero-badges{justify-content:center}
+    .hero-visual{order:-1}
+    .av-ring{width:220px;height:220px}
+    .av-card.c2{left:-10px}
+    .about-grid{grid-template-columns:1fr}
+    .contact-wrap{grid-template-columns:1fr}
+    .f-row{grid-template-columns:1fr}
+    .nav-links,.nav-cta{display:none}
+    .burger{display:flex}
+    section{padding:66px 0}
+  }
+  @media(max-width:500px){
+    h1{font-size:2rem} h2{font-size:1.6rem}
+    .projects-grid,.lab-grid,.cert-grid{grid-template-columns:1fr}
+    .about-cards{grid-template-columns:repeat(3,1fr)}
+  }
+  </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#" class="logo">Gian</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#labs">Labs</a></li>
-        <li><a href="#activities">Activities</a></li>
-        <li><a href="assets/resume.pdf" target="_blank">Resume</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="hamburger">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="hero-inner">
+<div class="cursor" id="cursor"></div>
+<div class="toast" id="toast">✅ Message sent! I'll get back to you soon.</div>
+<div class="mesh"><b></b><b></b><b></b></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-in">
+    <a class="logo" href="#hero">GC.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#labs">Labs</a></li>
+      <li><a href="#certificates">Certs</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me 🎓</a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<ul class="mob-menu" id="mobMenu">
+  <li><a href="#about" class="ml">About</a></li>
+  <li><a href="#skills" class="ml">Skills</a></li>
+  <li><a href="#projects" class="ml">Projects</a></li>
+  <li><a href="#labs" class="ml">Labs</a></li>
+  <li><a href="#certificates" class="ml">Certs</a></li>
+  <li><a href="#experience" class="ml">Experience</a></li>
+  <li><a href="#resume" class="ml">Resume</a></li>
+  <li><a href="#contact" class="ml">Contact</a></li>
+</ul>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="wrap">
+    <div class="hero-grid">
       <div>
-        <div class="hero-tag"><span></span> Computer Engineering Student</div>
-        <h1>Hello, I'm <span class="highlight">Gian</span></h1>
-        <p class="hero-sub">Aspiring Embedded Systems & Python Developer, preparing for internship opportunities. Skilled in dashboards, experiments, and engineering problem-solving.</p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View My Work</a>
-          <a href="assets/resume.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
+        <div class="hero-pill r"><span class="dot"></span> Seeking OJT / Internship 2025</div>
+        <h1 class="r">Hi, I'm<br><span class="grad">Gian Carlo</span></h1>
+        <p class="hero-sub r">Computer Engineering student passionate about <strong>embedded systems, software development, and IoT</strong>. Ready to contribute, learn, and grow through hands-on internship experience.</p>
+        <div class="hero-btns r">
+          <a href="#projects" class="btn btn-primary">View My Work →</a>
+          <a href="resume.pdf" class="btn btn-ghost" download>⬇ Download Resume</a>
+        </div>
+        <div class="hero-badges r">
+          <div class="badge">🎓 BSCpE Student</div>
+          <div class="badge">📍 Philippines</div>
+          <div class="badge">⚡ Open to OJT</div>
         </div>
       </div>
-      <div class="hero-avatar">
-        <div class="avatar-ring">
-          <div class="avatar-inner">
-            <img src="assets/profile.jpg" alt="Gian's Photo" />
+      <div class="hero-visual r">
+        <div class="av-wrap">
+          <div class="av-ring">
+            <div class="av-inner">
+              <svg width="160" height="160" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="34" r="18" fill="rgba(108,99,255,0.55)"/>
+                <ellipse cx="50" cy="84" rx="27" ry="16" fill="rgba(108,99,255,0.35)"/>
+                <line x1="10" y1="50" x2="28" y2="50" stroke="rgba(0,212,170,0.5)" stroke-width="1.5"/>
+                <line x1="72" y1="50" x2="90" y2="50" stroke="rgba(0,212,170,0.5)" stroke-width="1.5"/>
+                <rect x="26" y="46" width="8" height="8" rx="1" fill="none" stroke="rgba(0,212,170,0.6)" stroke-width="1.5"/>
+                <rect x="66" y="46" width="8" height="8" rx="1" fill="none" stroke="rgba(0,212,170,0.6)" stroke-width="1.5"/>
+              </svg>
+            </div>
           </div>
+          <div class="av-card c1">💻 Future Engineer</div>
+          <div class="av-card c2">🔌 IoT &amp; Embedded</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+  <div class="scroll-down"><span>scroll</span><span class="arr">↓</span></div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="container">
-    <div class="section-header">
-      <span class="section-label">About Me</span>
-      <h2>Who I Am</h2>
-      <p class="section-desc">I am a Computer Engineering student passionate about applying mathematics, science, and engineering principles to real-world problems. I am preparing for my OJT and internship opportunities.</p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">About Me</p>
+      <h2 class="r">Who I Am</h2>
     </div>
-  </section>
+    <div class="about-grid">
+      <div class="about-photo r">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="36" r="22" fill="rgba(108,99,255,0.3)"/>
+          <ellipse cx="50" cy="88" rx="33" ry="20" fill="rgba(108,99,255,0.2)"/>
+        </svg>
+        <div class="photo-label">📸 Replace with your actual photo</div>
+      </div>
+      <div class="about-content">
+        <h3 class="r">Computer Engineering Student seeking OJT</h3>
+        <p class="r">I am a <strong>3rd year Bachelor of Science in Computer Engineering (BSCpE)</strong> student at <strong>Bicol University Polangui Campus</strong>, with a solid foundation in electronics, programming, networking, and embedded systems. I am actively seeking an OJT/internship opportunity where I can apply my academic knowledge and contribute to real-world engineering projects.</p>
+        <p class="r">My coursework spans the full BSCpE curriculum, including Mathematics, Natural Sciences, Basic Engineering Sciences, and Allied and Professional courses. I am passionate about leveraging technology to solve practical problems and thrive in multidisciplinary team environments. I am eager to gain hands-on experience, enhance my technical and professional skills, and bring value to an organization that fosters innovation and growth.</p>
+        <div class="about-cards r">
+          <div class="about-card"><div class="num">3rd</div><div class="lbl">Year CpE</div></div>
+          <div class="about-card"><div class="num">4+</div><div class="lbl">Lab Projects</div></div>
+          <div class="about-card"><div class="num">10+</div><div class="lbl">Certs</div></div>
+        </div>
+        <div class="obj-box r">
+          <h4>🎯 OJT OBJECTIVE</h4>
+          <p>To obtain an internship position where I can apply my knowledge in embedded systems, software development, or network engineering — contributing to team goals while gaining the industry experience and professional skills required for engineering practice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Skills -->
-  <section id="skills" class="container">
-    <div class="section-header">
-      <span class="section-label">Skills</span>
-      <h2>Core Competencies</h2>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Expertise</p>
+      <h2 class="r">Skills & Technologies</h2>
+      <p class="sec-sub r">Core competencies developed through the BSCpE curriculum and personal projects, aligned with OJT requirements.</p>
     </div>
     <div class="skills-grid">
-      <div class="skill-card">
-        <h3>Problem Solving</h3>
-        <p>Ability to identify, formulate, and solve engineering problems using mathematics and science.</p>
+      <div class="skill-card r">
+        <div class="ico">⚡</div>
+        <h3>Electronics</h3>
+        <div class="tags">
+          <span class="tag">Circuit Analysis</span><span class="tag">KVL &amp; KCL</span>
+          <span class="tag">Analog Circuits</span><span class="tag">Digital Logic</span>
+          <span class="tag">PCB Layout</span><span class="tag">Multisim / Proteus</span>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Experimentation</h3>
-        <p>Design and conduct experiments, analyze and interpret data effectively.</p>
+      <div class="skill-card r">
+        <div class="ico">💻</div>
+        <h3>Programming (Python, C/C++)</h3>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">C</span>
+          <span class="tag">C++</span><span class="tag">Object-Oriented Programming</span>
+          <span class="tag">Data Structures</span><span class="tag">Algorithm Design</span>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Systems Design</h3>
-        <p>Design systems, components, or processes within realistic constraints (economic, environmental, social, ethical).</p>
+      <div class="skill-card r">
+        <div class="ico">🌐</div>
+        <h3>Networking</h3>
+        <div class="tags">
+          <span class="tag g">TCP/IP</span><span class="tag g">IP Addressing</span>
+          <span class="tag g">Subnetting</span><span class="tag g">Cisco Packet Tracer</span>
+          <span class="tag g">VLAN</span><span class="tag g">Network Troubleshooting</span>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Teamwork</h3>
-        <p>Ability to function on multidisciplinary teams and communicate effectively.</p>
+      <div class="skill-card r">
+        <div class="ico">🔌</div>
+        <h3>Embedded Systems</h3>
+        <div class="tags">
+          <span class="tag p">Arduino</span><span class="tag p">Raspberry Pi</span>
+          <span class="tag p">ESP32 / ESP8266</span><span class="tag p">Microcontrollers</span>
+          <span class="tag p">GPIO &amp; PWM</span><span class="tag p">Sensor Integration</span>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Ethics & Responsibility</h3>
-        <p>Understanding of professional and ethical responsibility in engineering practice.</p>
+      <div class="skill-card r">
+        <div class="ico">🤝</div>
+        <h3>Teamwork &amp; Communication</h3>
+        <div class="tags">
+          <span class="tag g">Collaborative Work</span><span class="tag g">Technical Writing</span>
+          <span class="tag g">Oral Presentation</span><span class="tag g">Documentation</span>
+          <span class="tag g">Problem Solving</span><span class="tag g">Time Management</span>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Engineering Tools</h3>
-        <p>Proficient in modern engineering tools, Python, and dashboard design.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="container">
-    <div class="section-header">
-      <span class="section-label">Projects</span>
-      <h2>My Work</h2>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-thumb"><span class="thumb-num">01</span></div>
-        <div class="project-body">
-          <h3>Smart Crop Planner</h3>
-          <p>Dashboard app for farmers with offline-first features.</p>
-          <div class="project-links">
-            <a href="#" class="project-link link-demo">Demo</a>
-            <a href="#" class="project-link link-code">Code</a>
-          </div>
+      <div class="skill-card r">
+        <div class="ico">📐</div>
+        <h3>Engineering Design &amp; Experimentation</h3>
+        <div class="tags">
+          <span class="tag">System Design</span><span class="tag">Lab Experimentation</span>
+          <span class="tag">Data Analysis</span><span class="tag">MATLAB</span>
+          <span class="tag">AutoCAD</span><span class="tag">Engineering Reports</span>
         </div>
       </div>
     </div>
-  </section>
+    <div class="skills-note r">
+      <span style="font-size:1.4rem;flex-shrink:0">📚</span>
+      <p><strong>BSCpE Curriculum Alignment:</strong> All skills developed through the full BSCpE program at Bicol University Polangui Campus — covering Mathematics, Natural/Physical Sciences, Basic Engineering Sciences, Allied &amp; Professional Courses as prescribed by CHED. Competencies include <strong>designing systems, conducting experiments, analyzing data, working in multidisciplinary teams, and applying modern engineering tools</strong> (ABET/CHED outcomes a–l).</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Experience Timeline -->
-  <section id="experience" class="container">
-    <div class="section-header">
-      <span class="section-label">Experience</span>
-      <h2>OJT & Internship Readiness</h2>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Work</p>
+      <h2 class="r">Featured Projects</h2>
+      <p class="sec-sub r">Academic and personal projects demonstrating applied engineering competencies.</p>
+    </div>
+    <div class="proj-filters r">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="software">Software</button>
+      <button class="filter-btn" data-filter="network">Network</button>
+      <button class="filter-btn" data-filter="embedded">Embedded</button>
+    </div>
+    <div class="projects-grid" id="projGrid">
+
+      <div class="proj-card r" data-cat="software">
+        <div class="proj-thumb">
+          <div class="bg-num">01</div><div class="main-ico">🌐</div>
+          <span class="proj-type">Software</span>
+        </div>
+        <div class="proj-body">
+          <h3>Portfolio Website</h3>
+          <p>Designed and developed a personal portfolio website to showcase academic projects, certifications, laboratory activities, and skills. Built with clean HTML, CSS, and JavaScript — fully responsive and optimized for recruiter viewing on desktop and mobile.</p>
+          <div class="proj-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span></div>
+          <div class="proj-actions">
+            <a href="#" class="proj-btn pb-primary">Live Site</a>
+            <a href="#" class="proj-btn pb-ghost">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card r" data-cat="network">
+        <div class="proj-thumb">
+          <div class="bg-num">02</div><div class="main-ico">🌐</div>
+          <span class="proj-type">Network</span>
+        </div>
+        <div class="proj-body">
+          <h3>Networking Lab</h3>
+          <p>Hands-on networking laboratory exercise involving IP addressing, subnetting, VLAN configuration, and inter-VLAN routing using Cisco Packet Tracer. Demonstrated understanding of network topology design and basic troubleshooting techniques.</p>
+          <div class="proj-stack"><span>Cisco Packet Tracer</span><span>IP Addressing</span><span>VLAN</span><span>Subnetting</span></div>
+          <div class="proj-actions">
+            <a href="#" class="proj-btn pb-primary">View Report</a>
+            <a href="#" class="proj-btn pb-ghost">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card r" data-cat="embedded">
+        <div class="proj-thumb">
+          <div class="bg-num">03</div><div class="main-ico">🔌</div>
+          <span class="proj-type">Embedded</span>
+        </div>
+        <div class="proj-body">
+          <h3>Embedded Systems Experiment</h3>
+          <p>Microcontroller-based experiment involving GPIO control, PWM signal generation, and sensor interfacing using Arduino. Applied concepts from the BSCpE embedded systems course to design, build, and test a working prototype circuit with documented results.</p>
+          <div class="proj-stack"><span>Arduino</span><span>C++</span><span>GPIO</span><span>PWM</span><span>Sensors</span></div>
+          <div class="proj-actions">
+            <a href="#" class="proj-btn pb-primary">View Demo</a>
+            <a href="#" class="proj-btn pb-ghost">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LAB ACTIVITIES -->
+<section id="labs">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Hands-On</p>
+      <h2 class="r">Laboratory Activities</h2>
+      <p class="sec-sub r">Selected experiments and activities from my engineering coursework demonstrating practical skills.</p>
+    </div>
+    <div class="lab-grid">
+      <div class="lab-card r">
+        <div class="lab-num">LAB 01 · CIRCUITS</div>
+        <h3>Ohm's Law & Kirchhoff's Laws Verification</h3>
+        <p>Measured V, I, and R in series/parallel circuits to verify KVL and KCL. Compared theoretical vs. experimental values and computed percentage error using formal lab reports.</p>
+        <span class="lab-outcome">✔ Data Analysis &amp; Interpretation</span>
+      </div>
+      <div class="lab-card r">
+        <div class="lab-num">LAB 02 · DIGITAL ELECTRONICS</div>
+        <h3>Logic Gates & Combinational Circuit Design</h3>
+        <p>Implemented combinational logic using TTL gates. Verified truth tables, minimized Boolean expressions via K-maps, and constructed a 4-bit binary adder circuit on breadboard.</p>
+        <span class="lab-outcome">✔ Digital Circuit Design</span>
+      </div>
+      <div class="lab-card r">
+        <div class="lab-num">LAB 03 · MICROCONTROLLERS</div>
+        <h3>Arduino GPIO, PWM & Interrupt Handling</h3>
+        <p>Programmed GPIO for digital I/O, used PWM to control servo motors and LED brightness, and implemented external interrupt-driven routines with debounced push buttons.</p>
+        <span class="lab-outcome">✔ Embedded Programming</span>
+      </div>
+      <div class="lab-card r">
+        <div class="lab-num">LAB 04 · COMPUTER NETWORKS</div>
+        <h3>VLAN Configuration & IP Subnetting</h3>
+        <p>Configured VLANs on managed switches, performed VLSM subnetting, set up inter-VLAN routing and ACLs. Verified end-to-end connectivity across simulated campus topology.</p>
+        <span class="lab-outcome">✔ Network Engineering</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Credentials</p>
+      <h2 class="r">Certificates & Trainings</h2>
+      <p class="sec-sub r">Professional certifications and trainings that complement my academic learning.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">🐍</div>
+          <div class="cert-meta"><h3>Python Essentials 1</h3><div class="cert-issuer">DICT Sorsogon</div></div>
+        </div>
+        <div class="cert-date">📅 DICT Sorsogon</div>
+        <div class="cert-skills-row"><span class="cert-skill">Python</span><span class="cert-skill">Programming</span><span class="cert-skill">Problem Solving</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">⚙️</div>
+          <div class="cert-meta"><h3>C++ Essentials 1</h3><div class="cert-issuer">C++ Institute</div></div>
+        </div>
+        <div class="cert-date">📅 Feb 3 – Apr 3</div>
+        <div class="cert-skills-row"><span class="cert-skill">C++</span><span class="cert-skill">OOP</span><span class="cert-skill">Data Structures</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">📡</div>
+          <div class="cert-meta"><h3>Electronic Communication &amp; Technology</h3><div class="cert-issuer">Webinar with Certificate</div></div>
+        </div>
+        <div class="cert-date">📅 Webinar</div>
+        <div class="cert-skills-row"><span class="cert-skill">Electronics</span><span class="cert-skill">Communication</span><span class="cert-skill">Technology</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">🤖</div>
+          <div class="cert-meta"><h3>Practical Application of AI for Daily Use</h3><div class="cert-issuer">Albay Institute for Artificial Intelligence</div></div>
+        </div>
+        <div class="cert-date">📅 Feb 7 — Albay</div>
+        <div class="cert-skills-row"><span class="cert-skill">Artificial Intelligence</span><span class="cert-skill">AI Tools</span><span class="cert-skill">Productivity</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">📱</div>
+          <div class="cert-meta"><h3>Fundamentals of Mobile Technology</h3><div class="cert-issuer">DICT Region 2 — Webinar</div></div>
+        </div>
+        <div class="cert-date">📅 DICT Region 2</div>
+        <div class="cert-skills-row"><span class="cert-skill">Mobile Tech</span><span class="cert-skill">Networking</span><span class="cert-skill">ICT</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">🌐</div>
+          <div class="cert-meta"><h3>Getting Started with Cisco Packet Tracer</h3><div class="cert-issuer">Cisco Networking Academy (NetAcad)</div></div>
+        </div>
+        <div class="cert-date">📅 Cisco NetAcad</div>
+        <div class="cert-skills-row"><span class="cert-skill">Packet Tracer</span><span class="cert-skill">Networking</span><span class="cert-skill">Cisco</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">🏆</div>
+          <div class="cert-meta"><h3>ICpEP National CPE Student Congress</h3><div class="cert-issuer">BYTE2025: Building Young Tech Experts for a Smarter Future</div></div>
+        </div>
+        <div class="cert-date">📅 May 8–9, 2025</div>
+        <div class="cert-skills-row"><span class="cert-skill">Engineering</span><span class="cert-skill">Leadership</span><span class="cert-skill">Networking</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">💡</div>
+          <div class="cert-meta"><h3>Work Smarter, Not Harder: Optimize Work with AI</h3><div class="cert-issuer">DICT CAR ILCDB Webinar</div></div>
+        </div>
+        <div class="cert-date">📅 Jan 28, 2026</div>
+        <div class="cert-skills-row"><span class="cert-skill">AI Tools</span><span class="cert-skill">Productivity</span><span class="cert-skill">Digital Skills</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+      <div class="cert-card r">
+        <div class="cert-header">
+          <div class="cert-ico">🔌</div>
+          <div class="cert-meta"><h3>Network Addressing &amp; Basic Troubleshooting</h3><div class="cert-issuer">DICT-ITU DTC Initiative</div></div>
+        </div>
+        <div class="cert-date">📅 Feb 9 – Feb 28, 2026</div>
+        <div class="cert-skills-row"><span class="cert-skill">IP Addressing</span><span class="cert-skill">Troubleshooting</span><span class="cert-skill">Networking</span></div>
+        <a href="#" class="cert-link">View Certificate →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE / EDUCATION -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Background</p>
+      <h2 class="r">Education & Experience</h2>
     </div>
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-date">2025</div>
-        <h3>Laboratory Work</h3>
-        <p>Applied engineering principles in lab experiments, focusing on data analysis and system design.</p>
+      <div class="t-item r">
+        <div class="t-date">2026 – PRESENT</div>
+        <h3>BS Computer Engineering (BSCpE)</h3>
+        <div class="t-where">🏫 Bicol University Polangui Campus · 3rd Year Student</div>
+        <p>Pursuing a BSCpE degree with coursework covering embedded systems, computer networks, digital electronics, signal processing, software engineering, and database management. Actively participating in webinars, national congresses, and DICT training programs to supplement academic learning.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-date">2026</div>
-        <h3>Internship Preparation</h3>
-        <p>Developed skills in problem-solving, teamwork, and ethical responsibility aligned with curriculum outcomes.</p>
+      <div class="t-item r">
+        <div class="t-date">2023</div>
+        <h3>Computer Systems Servicing (CSS)</h3>
+        <div class="t-where">🏫 Manito National High School · Senior High School</div>
+        <p>Completed the Technical-Vocational track with a specialization in Computer Systems Servicing. Gained hands-on skills in computer hardware assembly and disassembly, OS installation and configuration, network setup, and basic troubleshooting — laying a strong practical foundation for computer engineering.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Certificates -->
-  <section id="certificates" class="container">
-    <div class="section-header">
-      <span class="section-label">Certificates</span>
-      <h2>Achievements</h2>
+<!-- RESUME -->
+<section id="resume" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Resume</p>
+      <h2 class="r">Download My Resume</h2>
+      <p class="sec-sub r">Get a complete overview of my academic background, skills, certifications, and projects in one document.</p>
     </div>
-    <div class="gallery">
-      <img src="assets/certificates/cert1.jpg" alt="Certificate 1">
-      <img src="assets/certificates/cert2.jpg" alt="Certificate 2">
+    <div class="r" style="display:flex;justify-content:center;">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:48px 40px;text-align:center;max-width:520px;width:100%;">
+        <div style="font-size:3.5rem;margin-bottom:20px;">📄</div>
+        <h3 style="font-family:var(--head);font-size:1.3rem;font-weight:700;margin-bottom:10px;">Gian Carlo</h3>
+        <p style="color:var(--muted);font-size:.9rem;margin-bottom:8px;">BS Computer Engineering Student</p>
+        <p style="color:var(--muted);font-size:.85rem;margin-bottom:28px;">Bicol University Polangui Campus · Seeking OJT/Internship 2025</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="resume.pdf" class="btn btn-primary" download>⬇ Download Resume (PDF)</a>
+          <a href="resume.pdf" target="_blank" class="btn btn-ghost">👁 View Online</a>
+        </div>
+        <p style="color:var(--muted);font-size:.76rem;margin-top:18px;opacity:.7;">⚠ Replace <code style="background:var(--bg2);padding:2px 6px;border-radius:4px;font-size:.75rem;">resume.pdf</code> with your actual resume file in the same folder as this HTML file.</p>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Labs -->
-  <section id="labs" class="container">
-    <div class="section-header">
-      <span class="section-label">Labs</span>
-      <h2>Hands-on Practice</h2>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-tag r">Contact</p>
+      <h2 class="r">Get In Touch</h2>
+      <p class="sec-sub r">Open to OJT/internship opportunities, project collaborations, and professional networking.</p>
     </div>
-    <div class="gallery">
-      <img src="assets/labs/lab1.jpg" alt="Lab Photo 1">
-      <img src="assets/labs/lab2.jpg" alt="Lab Photo 2">
+    <div class="contact-wrap">
+      <div class="contact-left r">
+        <h3>Let's connect</h3>
+        <p>If your company is looking for a motivated Computer Engineering intern, I'd love to hear from you. I'm available for OJT and ready to contribute from day one.</p>
+        <div class="socials">
+          <a href="https://github.com/yourusername" target="_blank" class="social-a"><span class="s-ico">🐙</span> github.com/yourusername</a>
+          <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-a"><span class="s-ico">💼</span> linkedin.com/in/yourusername</a>
+          <a href="mailto:youremail@example.com" class="social-a"><span class="s-ico">✉️</span> youremail@example.com</a>
+          <a href="resume.pdf" download class="social-a"><span class="s-ico">📄</span> Download Resume</a>
+        </div>
+      </div>
+      <form class="c-form r" id="contactForm" novalidate>
+        <div class="f-row">
+          <div class="f-grp"><label for="cname">NAME</label><input type="text" id="cname" placeholder="Juan dela Cruz" required /></div>
+          <div class="f-grp"><label for="cemail">EMAIL</label><input type="email" id="cemail" placeholder="hr@company.com" required /></div>
+        </div>
+        <div class="f-grp">
+          <label for="ctype">INQUIRY TYPE</label>
+          <select id="ctype">
+            <option value="">Select a type...</option>
+            <option>OJT / Internship Offer</option>
+            <option>Project Collaboration</option>
+            <option>General Inquiry</option>
+          </select>
+        </div>
+        <div class="f-grp"><label for="csubj">SUBJECT</label><input type="text" id="csubj" placeholder="OJT Opportunity at [Company Name]" required /></div>
+        <div class="f-grp"><label for="cmsg">MESSAGE</label><textarea id="cmsg" rows="5" placeholder="I'd like to offer you an internship opportunity..." required></textarea></div>
+        <button type="submit" class="btn btn-primary submit-btn">Send Message ✉️</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Activities -->
-  <section id="activities" class="container">
-    <div class="section-header">
-      <span class="section-label">Activities</span>
-      <h2>Community & Projects</h2>
-    </div>
-    <div class="gallery">
-      <img src="assets/activities/activity1.jpg" alt="Activity 1">
-      <img src="assets/activities/activity2.jpg" alt="Activity 2">
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <p>Designed &amp; built with <em>♥</em> by <em>Gian Carlo</em> · BS Computer Engineering Student · 2025</p>
+  </div>
+</footer>
 
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <div class="section-header">
-      <span class="section-label">Contact</span>
-      <h2>Get in Touch</h2>
-    </div>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Message"></textarea>
-      <button type="submit" class="btn btn-primary form-submit">Send</button>
-    </form>
-  </section>
+<script>
+/* CURSOR */
+const cur = document.getElementById('cursor');
+document.addEventListener('mousemove', e => { cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px'; });
+document.querySelectorAll('a,button').forEach(el => {
+  el.addEventListener('mouseenter', () => cur.classList.add('big'));
+  el.addEventListener('mouseleave', () => cur.classList.remove('big'));
+});
 
-  <footer>
-    <p>© 2026 Gian | Hosted on GitHub Pages</p>
-  </footer>
+/* NAV SCROLL */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20));
 
-  <script src="js/script.js"></script>
-</body>
-</html>
+/* HAMBURGER */
+const burger = document.getElementById('burger');
+const mob    = document.getElementById('mobMenu');
+burger.addEventListener('click', () => {
+  burger.classList.toggle('open'); mob.classList.toggle('open');
+  document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+});
+document.querySelectorAll('.ml').forEach(a => a.addEventListener('click', () => {
+  burger.classList.remove('open'); mob.classList.remove('open');
+  document.body.style.overflow = '';
+}));
 
+/* SCROLL REVEAL */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((en, i) => {
+    if (en.isIntersecting) { setTimeout(() => en.target.classList.add('v'), i * 70); io.unobserve(en.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.r').forEach(el => io.observe(el));
+
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('#hero .r').forEach((el,i) => setTimeout(() => el.classList.add('v'), 180 + i*140));
+});
+
+/* ACTIVE NAV */
+const secs = document.querySelectorAll('section[id]');
+const nls  = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let c = '';
+  secs.forEach(s => { if (scrollY >= s.offsetTop - 110) c = s.id; });
+  nls.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + c));
+});
+
+/* PROJECT FILTER */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.proj-card').forEach(card => {
+      card.style.display = (f === 'all' || card.dataset.cat === f) ? 'flex' : 'none';
+    });
+  });
+});
+
+/* CONTACT FORM */
+document.getElementById('contactForm'

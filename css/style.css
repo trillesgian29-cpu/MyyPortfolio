@@ -1,0 +1,17 @@
+/* --- Gallery Section Styles --- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
+}
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(124,109,250,.25);
+}

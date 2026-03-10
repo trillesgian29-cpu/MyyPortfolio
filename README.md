@@ -204,15 +204,11 @@ Proof I don't just study — I earn credentials:
 
 ---
 
-## 📊 GitHub Activity
+## 📊 GitHub Stats
 
-<div align="center">
+![Stats](https://github-readme-stats.vercel.app/api?username=trillesgian29-cpu)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=trillesgian29-cpu&show_icons=true&theme=github_dark&hide_border=true)
-
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=trillesgian29-cpu&layout=compact&theme=github_dark&hide_border=true)](trillesgian29-cpu)
-
-</div>
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=trillesgian29-cpu)
 ---
 
 ## 🙏 Acknowledgments

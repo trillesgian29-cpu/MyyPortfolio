@@ -1,454 +1,275 @@
 # 🚀 Gian Carlo - Computer Engineering Portfolio
 [![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://trillesgian29-cpu.github.io/MyyPortfolio/)
 [![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)](#-current-status--roadmap)
-[![First Project](https://img.shields.io/badge/First-Web%20Project-yellow?style=for-the-badge)]()
+[![First Project](https://img.shields.io/badge/First-Web%20Project-yellow?style=for-the-badge)](https://github.com/trillesgian29-cpu)
 
-> **My first portfolio website** — built while learning web development as a Computer Engineering student at Bicol University Polangui Campus.
+# 🚀 Gian Carlo | Computer Engineering Portfolio
 
----
-
-## ⚠️ **Honest Disclaimer**
-
-**This is my FIRST GitHub repository and FIRST time deploying a website.** 
-
-I know the file structure is messy (everything is in the root folder 😅), and I'm still learning proper Git workflows and project organization. But hey, we all start somewhere! I'm documenting this journey as I learn and improve.
-
-**Started:** January 2026 | **In Progress:** Currently learning to organize better
-
----
-
-## 📖 About This Project
-
-This portfolio represents **two months of learning** HTML, CSS, and JavaScript from scratch. I built it to:
-
-- Showcase my Computer Engineering projects and certifications
-- Learn web development by doing
-- Create a professional online presence for OJT/internship applications
-- Practice Git, GitHub, and deployment
-
-**Real talk:** The repository is messy because I was focused on learning to code first, and didn't know about proper file organization. I'm planning to clean it up as I learn best practices! 🧹
-
----
-
-## ✨ What's Built So Far
-
-### **Live Features:**
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- 🎨 Modern dark theme with gradient accents
-- ✨ Smooth scroll-reveal animations
-- 📂 Complete portfolio sections:
-  - Hero section with introduction
-  - About Me (OJT-focused)
-  - Technical Skills (6 categories)
-  - Academic Projects (3 projects)
-  - Laboratory Activities (4 completed labs)
-  - Certifications (9 industry certifications)
-  - Education timeline
-  - Resume download section
-  - Contact form
-
-### **Technologies Used:**
-- HTML5 (semantic structure)
-- CSS3 (animations, flexbox, grid)
-- Vanilla JavaScript (scroll animations, interactions)
-- GitHub Pages (free hosting)
-
----
-
-## 📂 Current Repository Structure
-
-**Current state (I know it's messy 😅):**
-
-```
-portfolio/
-├── index.html                          # Main website file
-├── Gian_Carlo_OJT_Resume_1Page.pdf    # Resume PDF
-├── Picture_Resume.png                  # Profile picture
-├── IMG_20260220_015748_464.jpg        # Another photo
-├── 1769129128431[1].jpg               # Certificate/image
-├── 1771522524183.jpg                  # Certificate/image
-├── result_0 (1).png                   # Some image
-├── Pre-amp_TrillesGianCarlo_2a.pdf    # Lab report
-├── PythonEssential1.pdf               # Certification
-├── ElectronnicsCommunication.pdf      # Certification
-├── GettingStartedWithPacketTracer.pdf # Certification
-├── WorkSmarterNotHarder.pdf           # Certification
-├── machineLearningInAI.pdf            # Certification
-└── README.md                          # This file
-```
-
-**Yeah, everything is just dumped in the root folder.** This is what happens when you're learning and just trying to make things work! 😂
-
----
-
-## 🧹 **Planned Cleanup** (What I'm Learning to Fix)
-
-**Target structure I'm working towards:**
-
-```
-portfolio/
-├── index.html                    # Main HTML
-├── css/
-│   └── styles.css               # Separate stylesheet (currently inline)
-├── js/
-│   └── script.js                # Separate JavaScript (currently inline)
-├── assets/
-│   ├── images/
-│   │   ├── profile.png          # Profile picture
-│   │   ├── projects/            # Project screenshots
-│   │   └── certificates/        # Certificate thumbnails
-│   ├── pdfs/
-│   │   ├── resume.pdf           # Resume file
-│   │   ├── certifications/      # All certification PDFs
-│   │   └── reports/             # Lab reports
-│   └── icons/                   # Favicons, logos
-├── README.md                     # Documentation
-├── LICENSE                       # MIT License
-└── .gitignore                    # Ignore unnecessary files
-```
-
-**I'm learning how to:**
-- Separate CSS and JS into their own files
-- Organize images and PDFs into folders
-- Use meaningful file names (not `1769129128431[1].jpg` 😅)
-- Create a `.gitignore` file
-- Use proper Git commit messages
-- Follow web development best practices
-
----
-
-## 🚧 Current Status & Roadmap
-
-### ✅ **Completed:**
-- [x] Built and deployed first website
-- [x] Made it fully responsive
-- [x] Added all portfolio content
-- [x] Published 9 certifications
-- [x] Created OJT-ready resume
-- [x] Set up GitHub Pages hosting
-- [x] Learned basic Git (commit, push, pull)
-
-### 🔨 **In Progress:**
-- [ ] Reorganizing repository structure
-- [ ] Separating CSS and JS into files
-- [ ] Renaming files properly
-- [ ] Creating folder structure
-- [ ] Adding code comments
-- [ ] Writing better commit messages
-- [ ] Learning `.gitignore` usage
-
-### 💡 **Future Plans:**
-- [ ] Add project demos/screenshots
-- [ ] Implement dark/light mode toggle
-- [ ] Add blog section for technical writeups
-- [ ] Optimize images (compress, WebP format)
-- [ ] Learn and apply SEO best practices
-- [ ] Set up contact form backend
-- [ ] Add Google Analytics
-- [ ] Create better documentation
-
----
-
-## 🛠️ Technologies & Skills I'm Learning
-
-**Frontend:**
-- HTML5 (semantic markup, accessibility)
-- CSS3 (flexbox, grid, animations, responsive design)
-- JavaScript (DOM manipulation, event handling, ES6+)
-
-**Tools & Workflow:**
-- Git & GitHub (version control)
-- GitHub Pages (deployment)
-- VS Code (code editor)
-- Chrome DevTools (debugging)
-
-**Design:**
-- Responsive web design
-- Mobile-first approach
-- UI/UX principles
-- Color theory & typography
-
----
-
-## 🎓 My Learning Journey
-
-**Timeline:**
-
-| Date | What I Learned |
-|------|----------------|
-| **January 2026** | Started learning HTML/CSS from YouTube |
-| **January 2026** | Built first version of portfolio (single HTML file) |
-| **February 2026** | Added JavaScript for animations |
-| **February 2026** | Learned Git basics, created GitHub account |
-| **February 2026** | Deployed to GitHub Pages for the first time! 🎉 |
-| **February 2026** | Added all certifications and content |
-| **March 2026** | Created professional resume PDF |
-| **March 2026** | Writing this README, planning cleanup |
-| **Future** | Learning proper project structure! |
-
----
-
-## 🚀 How to View This Project
-
-### **Live Demo:**
-👉 **[View Portfolio Website](https://trillesgian29-cpu.github.io/portfolio)**
-
-### **Run Locally:**
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/trillesgian29-cpu/portfolio.git
-   cd portfolio
-   ```
-
-2. **Open in browser:**
-   ```bash
-   # Just open the HTML file
-   open index.html        # macOS
-   start index.html       # Windows
-   xdg-open index.html    # Linux
-   ```
-
-3. **Or use a local server:**
-   ```bash
-   # Python 3
-   python -m http.server 8000
-   
-   # Then visit http://localhost:8000
-   ```
-
----
-
-## 🎯 Portfolio Highlights
-
-### **Academic Projects:**
-1. **Drag Race Traffic Light System** (Arduino/C++)
-2. **Portfolio Website** (HTML/CSS/JS) 
-3. **VLAN Network Lab** (Cisco Packet Tracer)
-
-### **Certifications (9 Total):**
-- Python Essentials 1 — DICT Sorsogon
-- C++ Essentials 1 — C++ Institute
-- Cisco Packet Tracer — NetAcad
-- Network Addressing & Troubleshooting — DICT-ITU
-- Mobile Technology Fundamentals — DICT Region 2
-- AI for Daily Use — Albay AI Institute
-- Work Smarter with AI — DICT CAR
-- ICpEP BYTE2025 Congress
-- Electronic Communication & Technology
-
-### **Technical Skills:**
-- **Programming:** Python, C, C++, JavaScript, HTML/CSS
-- **Embedded Systems:** Arduino, Raspberry Pi, ESP32
-- **Networking:** TCP/IP, VLAN, Subnetting, Cisco Packet Tracer
-- **Tools:** Git/GitHub, MATLAB, AutoCAD, Linux
-
----
-
-## 💬 A Note About "Messy Code"
-
-**Real talk:** Yes, my repository structure is chaotic. Yes, all my files are in the root folder. Yes, I have weird file names like `1769129128431[1].jpg`.
-
-**But here's the thing:**
-
-This is my **FIRST real project**. I was so focused on:
-- Making the website actually work
-- Learning HTML/CSS/JS syntax
-- Getting it deployed on GitHub Pages
-- Adding all my content
-
-...that I didn't think about file organization. I just wanted to see my code LIVE on the internet! 🚀
-
-**And you know what? That's okay.** 
-
-Every developer starts somewhere. This mess represents **learning in progress**. I'm not embarrassed by it — I'm proud that I built something real, even if it's not perfectly organized yet.
-
-**The important part:** I'm aware of the issues, I'm learning how to fix them, and I'm documenting my journey. That's what growth looks like! 🌱
-
----
-
-## 🤝 For Other Beginners
-
-If you're also learning web development and your code is messy — **that's completely normal!** 
-
-Here's what I learned:
-
-✅ **Just start building** — Don't wait until you know everything  
-✅ **Make it work first** — Optimization comes later  
-✅ **Deploy early** — Seeing your project live is motivating!  
-✅ **Learn from mistakes** — Every mess teaches you something  
-✅ **Document your journey** — Future you will thank you  
-✅ **Don't compare** — Everyone's learning path is different  
-
-**Resources that helped me:**
-- [MDN Web Docs](https://developer.mozilla.org/) — Best HTML/CSS/JS reference
-- [freeCodeCamp](https://www.freecodecamp.org/) — Free coding tutorials
-- [GitHub Pages Guide](https://pages.github.com/) — How to deploy
-- YouTube tutorials — Search "HTML CSS JavaScript portfolio tutorial"
-- Stack Overflow — For when you're stuck (I used this A LOT 😅)
-
----
-
-## 👨‍💻 About Me
-
-**Gian Carlo**  
-3rd Year Computer Engineering Student  
-Bicol University Polangui Campus, Philippines
-
-**What I'm About:**
-- 🎓 Studying Computer Engineering (BSCpE)
-- 🌍 From Bicol Region, Philippines
-- 💡 Interested in: Embedded Systems, IoT, Web Development, Networking
-- 🏆 9 industry certifications and counting
-- 🎯 Currently seeking: OJT/Internship opportunities
-- 🌱 Always learning, always improving
-
-**Contact Me:**
-- 📧 Email: youremail@example.com
-- 💼 LinkedIn: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-- 🐙 GitHub: [github.com/trillesgian29-cpu](https://github.com/trillesgian29-cpu)
-- 🌐 Portfolio: [trillesgian29-cpu.github.io/portfolio](https://trillesgian29-cpu.github.io/portfolio)
-
----
-
-## 📈 What I've Learned So Far
-
-**Technical Skills:**
-- ✅ Building responsive websites from scratch
-- ✅ Using Git for version control (still learning!)
-- ✅ Deploying to GitHub Pages
-- ✅ Writing HTML semantically
-- ✅ Styling with modern CSS (flexbox, grid, animations)
-- ✅ Adding interactivity with JavaScript
-- ✅ Debugging with Chrome DevTools
-
-**Soft Skills:**
-- ✅ Self-directed learning
-- ✅ Problem-solving (lots of Googling! 😂)
-- ✅ Documenting my work
-- ✅ Being honest about what I don't know
-- ✅ Asking for help when stuck
-- ✅ Persistence (some bugs took HOURS to fix)
-
----
-
-## 🐛 Known Issues I'm Working On
-
-**Repository Organization:**
-- [ ] Files are all in root folder (need folder structure)
-- [ ] File names are not descriptive
-- [ ] No `.gitignore` file yet
-- [ ] CSS and JS are inline (should be separate files)
-
-**Code Quality:**
-- [ ] Need more code comments
-- [ ] Some repeated CSS could be simplified
-- [ ] JavaScript could be more modular
-- [ ] Need to optimize images (file sizes too large)
-
-**Features:**
-- [ ] Contact form doesn't actually send emails yet
-- [ ] Need to add loading animations
-- [ ] Should add a dark/light mode toggle
-- [ ] Resume download link needs updating
-
-**I'm working through these as I learn!** Each issue is a learning opportunity. 💪
-
----
-
-## 🙏 Acknowledgments
-
-**Huge thanks to:**
-- **Bicol University Polangui Campus** — for the CpE education
-- **YouTube creators** — for free web dev tutorials
-- **Stack Overflow community** — for answering my beginner questions
-- **GitHub** — for free hosting via GitHub Pages
-- **My classmates** — for feedback and encouragement
-- **Everyone learning alongside me** — we're in this together! 🌱
-
----
-
-## 📜 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-Feel free to use this code as inspiration for your own portfolio, but please:
-- Give credit where it's due
-- Don't just copy-paste my content
-- Make it your own!
-
----
-
-## 💪 My Commitment to Improvement
-
-**I promise to:**
-
-✅ Keep learning web development best practices  
-✅ Clean up this repository structure (coming soon!)  
-✅ Write better, more organized code  
-✅ Document my progress and learnings  
-✅ Help other beginners when I can  
-✅ Never stop improving  
-
-**Check back in a few months** — I guarantee this repository will look MUCH better! 🚀
-
----
-
-## 📊 Progress Tracker
-
-| Skill Level | January 2026 | March 2026 | Goal (June 2026) |
-|-------------|--------------|------------|------------------|
-| HTML | Beginner | Intermediate | Intermediate+ |
-| CSS | Beginner | Intermediate | Advanced |
-| JavaScript | None | Beginner | Intermediate |
-| Git/GitHub | None | Beginner | Intermediate |
-| Project Organization | None | Beginner | Intermediate |
-
----
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Site-Visit_Now-0066ff?style=for-the-badge)](https://trillesgian29-cpu.github.io/MyyPortfolio/)
+[![OJT Ready](https://img.shields.io/badge/🎯_OJT-Available_Now-00d4aa?style=for-the-badge)](#-why-hire-me-for-ojt)
+[![First Project](https://img.shields.io/badge/🌱_First-Web_Project-ffd700?style=for-the-badge)](#-my-story)
 
 <div align="center">
 
-## 🌟 "Everyone starts somewhere. This is my somewhere." 🌟
+### 💻 Computer Engineering Student | 🎓 Bicol University | 📍 Philippines
+**Building real projects • Learning in public • Ready for OJT/Remote Work**
 
-**Built with 💙 and lots of Stack Overflow searches by Gian Carlo**
-
-*A Computer Engineering student learning web development, one messy commit at a time.* 😂
-
-[![GitHub followers](https://img.shields.io/github/followers/trillesgian29-cpu?style=social)](https://github.com/trillesgian29-cpu)
-
----
-
-### ⭐ If this inspired you as a fellow beginner, give it a star!
-
-**Let's learn together!** 🚀
-
----
-
-**Last Updated:** March 10, 2026  
-**Status:** Active Development | Improving Daily
+[View Live Site](https://trillesgian29-cpu.github.io/portfolio) • [Download Resume](./Gian_Carlo_OJT_Resume_1Page.pdf) • [Contact Me](#-lets-connect)
 
 </div>
 
 ---
 
-## 🎯 Final Thoughts
+## 👋 Hey there! I'm Gian Carlo
 
-This portfolio isn't perfect. The code isn't perfect. The file structure definitely isn't perfect.
+**3rd-year Computer Engineering student** who went from zero web development knowledge to building and deploying a full portfolio website in **2 months**. 
 
-**But it's REAL.** It's **MY FIRST PROJECT**. And I **SHIPPED IT**.
+This is my first real project outside of classroom assignments, and yeah — **the repository structure is a beautiful mess** 😅. But that's the point! I'm learning in public, shipping real code, and improving every day.
 
-That's what matters.
-
-I could have waited until I knew more. I could have obsessed over making it perfect before publishing. But instead, I **built something real**, put it out there, and I'm learning by doing.
-
-**To other beginners:** Your first project doesn't have to be perfect. Just get it out there. You'll learn more from shipping messy code than from never shipping at all.
-
-**To potential employers/OJT supervisors:** Yes, I'm a beginner. But I'm a beginner who ships, learns, documents, and improves. That's the kind of developer I'm becoming.
+**What I'm looking for:** OJT/Internship opportunities where I can apply my skills in **embedded systems, software development, or networking** while learning from experienced engineers.
 
 ---
 
-**Now go check out the live site and let me know what you think!** 👇
+## ⚡ Quick Facts
 
-👉 **[Visit My Portfolio](https://trillesgian29-cpu.github.io/portfolio)**
+```javascript
+const gianCarlo = {
+  location: "Bicol Region, Philippines",
+  education: "BSCpE Year 3 @ Bicol University Polangui",
+  status: "Actively seeking OJT/Internship",
+  availability: "Immediate • Full-time or Part-time • Remote or On-site",
+  strengths: ["Embedded Systems", "Software Dev", "Networking"],
+  certifications: 9,
+  projectsShipped: 3,
+  learningStyle: "Build real things, break stuff, learn by doing"
+};
+```
+
+---
+
+## 🎯 Why Hire Me for OJT?
+
+Here's what makes me a solid OJT candidate:
+
+✅ **Self-Driven Learner** — Built this entire portfolio from scratch by teaching myself HTML/CSS/JS  
+✅ **Results-Focused** — 9 industry certifications (DICT, Cisco, C++ Institute) completed independently  
+✅ **Hands-On Experience** — Arduino systems, web development, network configuration labs  
+✅ **Ships Real Code** — This messy repo proves I don't just study — I build and deploy  
+✅ **Honest & Growth-Minded** — I know what I don't know, and I'm eager to learn  
+✅ **Ready to Start** — Available immediately for 300+ hours commitment  
+
+**Bottom line:** I'm the OJT who will show up, learn fast, contribute value, and document everything.
+
+---
+
+## 🛠️ Tech Stack & Skills
+
+### **Languages I Code In:**
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+### **What I'm Good At:**
+
+**💡 Embedded Systems & Hardware**
+- Arduino, Raspberry Pi, ESP32/ESP8266
+- GPIO, PWM, sensor integration, servo control
+- Real-time programming, interrupt handling
+
+**🌐 Software Development**
+- Python (data structures, OOP, scripting)
+- C/C++ (low-level programming, algorithms)
+- Web development (HTML/CSS/JS, responsive design)
+- Git/GitHub version control
+
+**🔌 Networking & IT**
+- TCP/IP, subnetting, VLAN configuration
+- Cisco Packet Tracer simulations
+- Network troubleshooting and design
+
+**🔧 Engineering Tools**
+- Circuit analysis (Multisim, Proteus)
+- MATLAB, AutoCAD, MS Office
+- Linux command line, VS Code
+
+---
+
+## 🚀 Projects I've Built
+
+### 1️⃣ **This Portfolio Website** (You're looking at it!)
+**Tech:** HTML • CSS • JavaScript • GitHub Pages  
+Built a fully responsive portfolio from scratch with scroll animations, mobile navigation, and professional design. Deployed and live on GitHub Pages.
+
+**What I learned:** Responsive design, DOM manipulation, Git workflows, web deployment
+
+---
+
+### 2️⃣ **Drag Race Traffic Light System** (Arduino)
+**Tech:** Arduino • C++ • GPIO • PWM • Embedded Systems  
+Programmed a professional Christmas Tree countdown system with precise timing control, button interface, and buzzer feedback.
+
+**What I learned:** Real-time embedded programming, hardware interfacing, timing-critical applications
+
+---
+
+### 3️⃣ **VLAN Network Configuration Lab**
+**Tech:** Cisco Packet Tracer • VLAN • Routing • Subnetting  
+Designed and simulated a multi-VLAN enterprise network with inter-VLAN routing, ACLs, and VLSM subnetting. Verified end-to-end connectivity.
+
+**What I learned:** Enterprise networking, IP addressing, network security, troubleshooting
+
+---
+
+## 🏆 Certifications (9 Total)
+
+Proof I don't just study — I earn credentials:
+
+- ✅ **Python Essentials 1** — DICT Sorsogon
+- ✅ **C++ Essentials 1** — C++ Institute  
+- ✅ **Cisco Packet Tracer** — Cisco Networking Academy
+- ✅ **Network Addressing & Troubleshooting** — DICT-ITU DTC
+- ✅ **Mobile Technology Fundamentals** — DICT Region 2
+- ✅ **AI for Daily Use** — Albay AI Institute
+- ✅ **Work Smarter with AI** — DICT CAR ILCDB
+- ✅ **ICpEP BYTE2025 Congress** — National CPE Student Congress
+- ✅ **Electronic Communication & Technology** — Technical Webinar
+
+**All earned independently** while managing full-time Computer Engineering coursework.
+
+---
+
+## 📚 My Story
+
+**January 2026:** Knew zero HTML/CSS. Decided to learn web development.  
+**February 2026:** Built this entire portfolio from YouTube tutorials and Stack Overflow.  
+**March 2026:** Deployed live on GitHub Pages. Now applying for OJT positions.
+
+**Real talk:** This repository is messy because I was focused on **shipping a real project** instead of waiting to be perfect. I dumped all my files in the root folder, used inline CSS/JS, and have weird file names like `1769129128431[1].jpg`.
+
+**But you know what?** That's how you learn. Build something real, make mistakes, ship it anyway, then improve. I'm not embarrassed by the mess — I'm proud I built something that works.
+
+**Next steps:** Learning proper project structure, separating CSS/JS files, and following web dev best practices. This repo will look much cleaner in a few months! 🧹
+
+---
+👉 Check out my GitHub profile here: [@trillesgian29-cpu](https://github.com/trillesgian29-cpu)
+
+
+## 🔥 What I'm Working On Right Now
+
+- [ ] Reorganizing this messy repository (learning proper file structure)
+- [ ] Building a custom Arduino weather station with API integration
+- [ ] Completing more networking certifications
+- [ ] Learning React.js for modern web development
+- [ ] Contributing to open-source projects
+- [ ] Finding the right OJT opportunity! 🎯
+
+---
+
+## 💼 Looking for OJT/Internship
+
+**Ideal Roles:**
+- Embedded Systems Engineer Intern
+- Software Developer OJT
+- Network Engineer Trainee
+- IoT Development Intern
+- Full-Stack Web Developer OJT
+
+**What I Bring:**
+- Strong technical foundation (hardware + software)
+- Self-learning ability (9 certifications prove it)
+- Real project experience (not just tutorials)
+- Professional communication skills
+- Commitment to 300+ hours
+
+**What I Want to Learn:**
+- Professional software development workflows
+- Industry-standard coding practices
+- Working in engineering teams
+- Real-world problem solving
+- Mentorship from experienced engineers
+
+**Location:** Flexible — Bicol Region preferred, but **open to remote OJT** anywhere in the Philippines or globally.
+
+---
+
+## 📬 Let's Connect
+
+**Ready to discuss OJT opportunities?**
+
+📧 **Email:** youremail@example.com  
+💼 **LinkedIn:** [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)  
+🐙 **GitHub:** [github.com/trillesgian29-cpu](https://github.com/trillesgian29-cpu)  
+🌐 **Portfolio:** [trillesgian29-cpu.github.io/portfolio](https://trillesgian29-cpu.github.io/portfolio)  
+📱 **Phone:** +63 9XX XXX XXXX
+
+**Response time:** Usually within 24 hours. If it's about OJT opportunities, I'll respond even faster! ⚡
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+![Gian Carlo's GitHub stats](https://github-readme-stats.vercel.app/api?username=trillesgian29-cpu&show_icons=true&theme=radical)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=trillesgian29-cpu&layout=compact&theme=radical)](https://github.com/trillesgian29-cpu)
+
+</div>
+
+---
+
+## 🙏 Acknowledgments
+
+Big thanks to:
+- **Bicol University Polangui Campus** — for the solid Computer Engineering education
+- **YouTube tutorial creators** — taught me web development from scratch
+- **Stack Overflow community** — answered my endless beginner questions (seriously, a LOT of questions 😂)
+- **DICT Philippines** — for free professional training and certifications
+- **GitHub** — for free hosting via GitHub Pages
+- **Everyone who gave feedback** — you helped me improve!
+
+---
+
+## 📝 Quick Notes
+
+**Is the code perfect?** Nope.  
+**Is the repo organized?** Not yet.  
+**Does it work?** Absolutely.  
+**Did I learn a ton building it?** 100%.  
+**Am I ready for OJT?** You bet! 🚀
+
+---
+
+<div align="center">
+
+## 🌟 "Ship code. Break things. Learn. Repeat." 🌟
+
+**Built by Gian Carlo** — A CpE student who chose to build real projects instead of waiting to be perfect.
+
+[![Star this repo](https://img.shields.io/github/stars/trillesgian29-cpu/portfolio?style=social)](https://github.com/trillesgian29-cpu/portfolio)
+
+---
+
+### 💪 Currently: Building • Learning • Seeking OJT
+
+**Let's build something amazing together!**
+
+[📧 Send me an email](mailto:youremail@example.com) • [💼 View my resume](./Gian_Carlo_OJT_Resume_1Page.pdf) • [🌐 Visit my portfolio](https://trillesgian29-cpu.github.io/portfolio)
+
+</div>
+
+---
+
+**Last Updated:** March 10, 2026  
+**Status:** 🟢 Active Development | Seeking OJT Opportunities
+
+---
+
+<div align="center">
+<sub>Made with 💙 and lots of coffee by a Computer Engineering student learning to code</sub>
+</div>
 
 ---

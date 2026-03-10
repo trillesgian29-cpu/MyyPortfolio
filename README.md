@@ -1,302 +1,455 @@
 # 🚀 Gian Carlo - Computer Engineering Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://yourusername.github.io)
-[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)]()
+[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://trillesgian29-cpu.github.io/portfolio)
+[![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)](#-current-status--roadmap)
+[![First Project](https://img.shields.io/badge/First-Web%20Project-yellow?style=for-the-badge)]()
 
 > **My first portfolio website** — built while learning web development as a Computer Engineering student at Bicol University Polangui Campus.
 
 ---
 
+## ⚠️ **Honest Disclaimer**
+
+**This is my FIRST GitHub repository and FIRST time deploying a website.** 
+
+I know the file structure is messy (everything is in the root folder 😅), and I'm still learning proper Git workflows and project organization. But hey, we all start somewhere! I'm documenting this journey as I learn and improve.
+
+**Started:** January 2026 | **In Progress:** Currently learning to organize better
+
+---
+
 ## 📖 About This Project
 
-This is **my first time deploying a website** and working with HTML, CSS, and JavaScript in a real project. I started building this portfolio **two months ago** (January 2026) as a way to:
+This portfolio represents **two months of learning** HTML, CSS, and JavaScript from scratch. I built it to:
 
-- Showcase my academic projects and certifications
-- Learn web development from scratch
+- Showcase my Computer Engineering projects and certifications
+- Learn web development by doing
 - Create a professional online presence for OJT/internship applications
-- Document my journey as a Computer Engineering student
+- Practice Git, GitHub, and deployment
 
-**I know the repository is a bit messy right now** — this is my first GitHub project and I'm still learning best practices for code organization, version control, and deployment. But I'm committed to improving it over time! 🌱
+**Real talk:** The repository is messy because I was focused on learning to code first, and didn't know about proper file organization. I'm planning to clean it up as I learn best practices! 🧹
 
 ---
 
-## ✨ Features
+## ✨ What's Built So Far
 
-- 📱 **Responsive Design** — Works on desktop, tablet, and mobile
-- 🎨 **Modern UI/UX** — Dark theme with smooth scroll animations
-- 📂 **Portfolio Sections:**
-  - About Me
-  - Technical Skills
-  - Academic Projects
-  - Laboratory Activities (4 labs completed)
+### **Live Features:**
+- 📱 Fully responsive design (mobile, tablet, desktop)
+- 🎨 Modern dark theme with gradient accents
+- ✨ Smooth scroll-reveal animations
+- 📂 Complete portfolio sections:
+  - Hero section with introduction
+  - About Me (OJT-focused)
+  - Technical Skills (6 categories)
+  - Academic Projects (3 projects)
+  - Laboratory Activities (4 completed labs)
   - Certifications (9 industry certifications)
-  - Education Timeline
-  - Contact Form
-- 🎯 **Built for OJT Applications** — Professional presentation for companies
+  - Education timeline
+  - Resume download section
+  - Contact form
+
+### **Technologies Used:**
+- HTML5 (semantic structure)
+- CSS3 (animations, flexbox, grid)
+- Vanilla JavaScript (scroll animations, interactions)
+- GitHub Pages (free hosting)
 
 ---
 
-## 🛠️ Technologies Used
+## 📂 Current Repository Structure
 
-- **HTML5** — Semantic structure
-- **CSS3** — Styling, animations, responsive design
-- **JavaScript (Vanilla)** — Scroll animations, interactive elements
-- **GitHub Pages** — Free hosting and deployment
+**Current state (I know it's messy 😅):**
+
+```
+portfolio/
+├── index.html                          # Main website file
+├── Gian_Carlo_OJT_Resume_1Page.pdf    # Resume PDF
+├── Picture_Resume.png                  # Profile picture
+├── IMG_20260220_015748_464.jpg        # Another photo
+├── 1769129128431[1].jpg               # Certificate/image
+├── 1771522524183.jpg                  # Certificate/image
+├── result_0 (1).png                   # Some image
+├── Pre-amp_TrillesGianCarlo_2a.pdf    # Lab report
+├── PythonEssential1.pdf               # Certification
+├── ElectronnicsCommunication.pdf      # Certification
+├── GettingStartedWithPacketTracer.pdf # Certification
+├── WorkSmarterNotHarder.pdf           # Certification
+├── machineLearningInAI.pdf            # Certification
+└── README.md                          # This file
+```
+
+**Yeah, everything is just dumped in the root folder.** This is what happens when you're learning and just trying to make things work! 😂
+
+---
+
+## 🧹 **Planned Cleanup** (What I'm Learning to Fix)
+
+**Target structure I'm working towards:**
+
+```
+portfolio/
+├── index.html                    # Main HTML
+├── css/
+│   └── styles.css               # Separate stylesheet (currently inline)
+├── js/
+│   └── script.js                # Separate JavaScript (currently inline)
+├── assets/
+│   ├── images/
+│   │   ├── profile.png          # Profile picture
+│   │   ├── projects/            # Project screenshots
+│   │   └── certificates/        # Certificate thumbnails
+│   ├── pdfs/
+│   │   ├── resume.pdf           # Resume file
+│   │   ├── certifications/      # All certification PDFs
+│   │   └── reports/             # Lab reports
+│   └── icons/                   # Favicons, logos
+├── README.md                     # Documentation
+├── LICENSE                       # MIT License
+└── .gitignore                    # Ignore unnecessary files
+```
+
+**I'm learning how to:**
+- Separate CSS and JS into their own files
+- Organize images and PDFs into folders
+- Use meaningful file names (not `1769129128431[1].jpg` 😅)
+- Create a `.gitignore` file
+- Use proper Git commit messages
+- Follow web development best practices
 
 ---
 
 ## 🚧 Current Status & Roadmap
 
-### ✅ What's Working
-- [x] Fully responsive layout
-- [x] All sections populated with real content
-- [x] Scroll-reveal animations
-- [x] Mobile navigation
-- [x] Deployed on GitHub Pages
+### ✅ **Completed:**
+- [x] Built and deployed first website
+- [x] Made it fully responsive
+- [x] Added all portfolio content
+- [x] Published 9 certifications
+- [x] Created OJT-ready resume
+- [x] Set up GitHub Pages hosting
+- [x] Learned basic Git (commit, push, pull)
 
-### 🔨 What I'm Working On
-- [ ] Cleaning up the repository structure
-- [ ] Adding proper comments to code
-- [ ] Organizing CSS files better
-- [ ] Improving loading performance
-- [ ] Learning Git best practices
-- [ ] Adding more interactive features
+### 🔨 **In Progress:**
+- [ ] Reorganizing repository structure
+- [ ] Separating CSS and JS into files
+- [ ] Renaming files properly
+- [ ] Creating folder structure
+- [ ] Adding code comments
+- [ ] Writing better commit messages
+- [ ] Learning `.gitignore` usage
 
-### 💡 Future Improvements
-- [ ] Add a blog section for technical writeups
+### 💡 **Future Plans:**
+- [ ] Add project demos/screenshots
 - [ ] Implement dark/light mode toggle
-- [ ] Add more projects as I build them
-- [ ] Create a better file structure
-- [ ] Learn and apply web accessibility standards
-- [ ] Optimize images and assets
+- [ ] Add blog section for technical writeups
+- [ ] Optimize images (compress, WebP format)
+- [ ] Learn and apply SEO best practices
+- [ ] Set up contact form backend
+- [ ] Add Google Analytics
+- [ ] Create better documentation
 
 ---
 
-## 📂 Repository Structure
+## 🛠️ Technologies & Skills I'm Learning
 
-```
-portfolio/
-├── index.html          # Main HTML file
-├── styles.css          # (If separated) Stylesheet
-├── script.js           # (If separated) JavaScript
-├── assets/             # Images, icons, files
-│   ├── images/
-│   └── resume.pdf
-└── README.md           # This file
-```
+**Frontend:**
+- HTML5 (semantic markup, accessibility)
+- CSS3 (flexbox, grid, animations, responsive design)
+- JavaScript (DOM manipulation, event handling, ES6+)
 
-> **Note:** As I learn more about web development best practices, I'll be reorganizing this structure to be cleaner and more maintainable.
+**Tools & Workflow:**
+- Git & GitHub (version control)
+- GitHub Pages (deployment)
+- VS Code (code editor)
+- Chrome DevTools (debugging)
 
----
-
-## 🎓 Learning Journey
-
-This portfolio represents **my learning journey** in web development. I'm a Computer Engineering student with a strong foundation in:
-
-- **Programming:** Python, C, C++
-- **Embedded Systems:** Arduino, Raspberry Pi
-- **Networking:** Cisco Packet Tracer, TCP/IP
-- **Electronics:** Circuit analysis, digital logic
-
-But **web development is new to me**. I built this portfolio to:
-1. Learn HTML/CSS/JS by doing
-2. Understand Git and GitHub workflows
-3. Practice deploying real projects
-4. Create something useful for my career
-
-**I'm learning as I go**, and I know there's a lot to improve. But that's the whole point — continuous learning and growth! 🌱
+**Design:**
+- Responsive web design
+- Mobile-first approach
+- UI/UX principles
+- Color theory & typography
 
 ---
 
-## 🚀 Getting Started
+## 🎓 My Learning Journey
 
-Want to run this locally? Here's how:
+**Timeline:**
 
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Edge, Safari)
-- (Optional) A local web server for testing
+| Date | What I Learned |
+|------|----------------|
+| **January 2026** | Started learning HTML/CSS from YouTube |
+| **January 2026** | Built first version of portfolio (single HTML file) |
+| **February 2026** | Added JavaScript for animations |
+| **February 2026** | Learned Git basics, created GitHub account |
+| **February 2026** | Deployed to GitHub Pages for the first time! 🎉 |
+| **February 2026** | Added all certifications and content |
+| **March 2026** | Created professional resume PDF |
+| **March 2026** | Writing this README, planning cleanup |
+| **Future** | Learning proper project structure! |
 
-### Installation
+---
 
-1. **Clone the repository**
+## 🚀 How to View This Project
+
+### **Live Demo:**
+👉 **[View Portfolio Website](https://trillesgian29-cpu.github.io/portfolio)**
+
+### **Run Locally:**
+
+1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/trillesgian29-cpu/portfolio.git
    cd portfolio
    ```
 
-2. **Open in browser**
+2. **Open in browser:**
    ```bash
-   # Option 1: Just open the file
-   open index.html  # macOS
-   start index.html # Windows
-   xdg-open index.html # Linux
-   
-   # Option 2: Use a local server (recommended)
+   # Just open the HTML file
+   open index.html        # macOS
+   start index.html       # Windows
+   xdg-open index.html    # Linux
+   ```
+
+3. **Or use a local server:**
+   ```bash
+   # Python 3
    python -m http.server 8000
+   
    # Then visit http://localhost:8000
    ```
 
-3. **That's it!** The site should load in your browser.
+---
+
+## 🎯 Portfolio Highlights
+
+### **Academic Projects:**
+1. **Drag Race Traffic Light System** (Arduino/C++)
+2. **Portfolio Website** (HTML/CSS/JS) 
+3. **VLAN Network Lab** (Cisco Packet Tracer)
+
+### **Certifications (9 Total):**
+- Python Essentials 1 — DICT Sorsogon
+- C++ Essentials 1 — C++ Institute
+- Cisco Packet Tracer — NetAcad
+- Network Addressing & Troubleshooting — DICT-ITU
+- Mobile Technology Fundamentals — DICT Region 2
+- AI for Daily Use — Albay AI Institute
+- Work Smarter with AI — DICT CAR
+- ICpEP BYTE2025 Congress
+- Electronic Communication & Technology
+
+### **Technical Skills:**
+- **Programming:** Python, C, C++, JavaScript, HTML/CSS
+- **Embedded Systems:** Arduino, Raspberry Pi, ESP32
+- **Networking:** TCP/IP, VLAN, Subnetting, Cisco Packet Tracer
+- **Tools:** Git/GitHub, MATLAB, AutoCAD, Linux
 
 ---
 
-## 📸 Screenshots
+## 💬 A Note About "Messy Code"
 
-### Desktop View
-![Portfolio Desktop](https://via.placeholder.com/800x400?text=Add+your+screenshot+here)
+**Real talk:** Yes, my repository structure is chaotic. Yes, all my files are in the root folder. Yes, I have weird file names like `1769129128431[1].jpg`.
 
-### Mobile View
-![Portfolio Mobile](https://via.placeholder.com/400x600?text=Add+your+mobile+screenshot)
+**But here's the thing:**
 
-> **TODO:** Add actual screenshots once I figure out how to properly capture and add them to GitHub!
+This is my **FIRST real project**. I was so focused on:
+- Making the website actually work
+- Learning HTML/CSS/JS syntax
+- Getting it deployed on GitHub Pages
+- Adding all my content
+
+...that I didn't think about file organization. I just wanted to see my code LIVE on the internet! 🚀
+
+**And you know what? That's okay.** 
+
+Every developer starts somewhere. This mess represents **learning in progress**. I'm not embarrassed by it — I'm proud that I built something real, even if it's not perfectly organized yet.
+
+**The important part:** I'm aware of the issues, I'm learning how to fix them, and I'm documenting my journey. That's what growth looks like! 🌱
 
 ---
 
-## 🤝 Contributing
+## 🤝 For Other Beginners
 
-Since this is a **personal learning project**, I'm not accepting direct contributions. However:
+If you're also learning web development and your code is messy — **that's completely normal!** 
 
-- ✅ **Feedback is welcome!** If you see something that could be improved, feel free to open an issue.
-- ✅ **Suggestions appreciated!** I'm learning, so constructive advice helps a lot.
-- ✅ **Questions encouraged!** If you're also learning web dev, let's learn together.
+Here's what I learned:
 
----
+✅ **Just start building** — Don't wait until you know everything  
+✅ **Make it work first** — Optimization comes later  
+✅ **Deploy early** — Seeing your project live is motivating!  
+✅ **Learn from mistakes** — Every mess teaches you something  
+✅ **Document your journey** — Future you will thank you  
+✅ **Don't compare** — Everyone's learning path is different  
 
-## 📝 License
-
-This project is licensed under the **MIT License** — feel free to use this code as inspiration for your own portfolio, but please give credit where credit is due.
-
-See [LICENSE](LICENSE) for more details.
+**Resources that helped me:**
+- [MDN Web Docs](https://developer.mozilla.org/) — Best HTML/CSS/JS reference
+- [freeCodeCamp](https://www.freecodecamp.org/) — Free coding tutorials
+- [GitHub Pages Guide](https://pages.github.com/) — How to deploy
+- YouTube tutorials — Search "HTML CSS JavaScript portfolio tutorial"
+- Stack Overflow — For when you're stuck (I used this A LOT 😅)
 
 ---
 
 ## 👨‍💻 About Me
 
-I'm **Gian Carlo**, a 3rd-year **Computer Engineering student** at **Bicol University Polangui Campus** in the Philippines.
+**Gian Carlo**  
+3rd Year Computer Engineering Student  
+Bicol University Polangui Campus, Philippines
 
-- 🎓 Studying: Computer Engineering (BSCpE)
-- 🌍 From: Bicol Region, Philippines
-- 💡 Interests: Embedded Systems, Software Development, IoT, Networking
-- 🏆 Achievements: 9 industry certifications (DICT, Cisco, C++ Institute)
-- 🎯 Goal: Looking for OJT/internship opportunities in tech
+**What I'm About:**
+- 🎓 Studying Computer Engineering (BSCpE)
+- 🌍 From Bicol Region, Philippines
+- 💡 Interested in: Embedded Systems, IoT, Web Development, Networking
+- 🏆 9 industry certifications and counting
+- 🎯 Currently seeking: OJT/Internship opportunities
+- 🌱 Always learning, always improving
 
-### 📫 Contact Me
+**Contact Me:**
+- 📧 Email: youremail@example.com
+- 💼 LinkedIn: [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
+- 🐙 GitHub: [github.com/trillesgian29-cpu](https://github.com/trillesgian29-cpu)
+- 🌐 Portfolio: [trillesgian29-cpu.github.io/portfolio](https://trillesgian29-cpu.github.io/portfolio)
 
-- **Email:** youremail@example.com
-- **LinkedIn:** [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)
-- **GitHub:** [github.com/yourusername](https://github.com/yourusername)
-- **Portfolio:** [yourusername.github.io](https://yourusername.github.io)
+---
+
+## 📈 What I've Learned So Far
+
+**Technical Skills:**
+- ✅ Building responsive websites from scratch
+- ✅ Using Git for version control (still learning!)
+- ✅ Deploying to GitHub Pages
+- ✅ Writing HTML semantically
+- ✅ Styling with modern CSS (flexbox, grid, animations)
+- ✅ Adding interactivity with JavaScript
+- ✅ Debugging with Chrome DevTools
+
+**Soft Skills:**
+- ✅ Self-directed learning
+- ✅ Problem-solving (lots of Googling! 😂)
+- ✅ Documenting my work
+- ✅ Being honest about what I don't know
+- ✅ Asking for help when stuck
+- ✅ Persistence (some bugs took HOURS to fix)
+
+---
+
+## 🐛 Known Issues I'm Working On
+
+**Repository Organization:**
+- [ ] Files are all in root folder (need folder structure)
+- [ ] File names are not descriptive
+- [ ] No `.gitignore` file yet
+- [ ] CSS and JS are inline (should be separate files)
+
+**Code Quality:**
+- [ ] Need more code comments
+- [ ] Some repeated CSS could be simplified
+- [ ] JavaScript could be more modular
+- [ ] Need to optimize images (file sizes too large)
+
+**Features:**
+- [ ] Contact form doesn't actually send emails yet
+- [ ] Need to add loading animations
+- [ ] Should add a dark/light mode toggle
+- [ ] Resume download link needs updating
+
+**I'm working through these as I learn!** Each issue is a learning opportunity. 💪
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Bicol University Polangui Campus** — for the Computer Engineering education
-- **YouTube tutorials** — for teaching me HTML/CSS/JS
-- **Stack Overflow community** — for solving my endless beginner questions
-- **GitHub Pages** — for free hosting
-- **Everyone who gave me feedback** — you helped me improve!
+**Huge thanks to:**
+- **Bicol University Polangui Campus** — for the CpE education
+- **YouTube creators** — for free web dev tutorials
+- **Stack Overflow community** — for answering my beginner questions
+- **GitHub** — for free hosting via GitHub Pages
+- **My classmates** — for feedback and encouragement
+- **Everyone learning alongside me** — we're in this together! 🌱
 
 ---
 
-## 📚 Resources I Used While Learning
+## 📜 License
 
-If you're also learning web development, here are some resources that helped me:
+This project is open source and available under the [MIT License](LICENSE).
 
-- [MDN Web Docs](https://developer.mozilla.org/) — Best HTML/CSS/JS reference
-- [freeCodeCamp](https://www.freecodecamp.org/) — Free coding tutorials
-- [CSS-Tricks](https://css-tricks.com/) — Amazing CSS guides
-- [Web.dev](https://web.dev/) — Google's web development best practices
-- [GitHub Pages Docs](https://pages.github.com/) — How to deploy for free
-
----
-
-## 💬 A Note on "Messy Code"
-
-Yes, my repository is **a bit messy**. Yes, I'm **still learning**. Yes, there are **things I'd do differently now**.
-
-But you know what? **That's okay.** 
-
-This is **my first real project**, and it represents **two months of learning** from scratch. Every developer starts somewhere, and this is where I'm starting.
-
-**I promise to keep learning and improving.** This portfolio will evolve as I grow as a developer. Check back in a few months — I guarantee it'll be better! 🚀
+Feel free to use this code as inspiration for your own portfolio, but please:
+- Give credit where it's due
+- Don't just copy-paste my content
+- Make it your own!
 
 ---
 
-## 📈 Progress Timeline
+## 💪 My Commitment to Improvement
 
-| Date | Milestone |
-|------|-----------|
-| **January 2026** | Started learning HTML/CSS |
-| **January 2026** | Built first version of portfolio |
-| **February 2026** | Added JavaScript animations |
-| **February 2026** | Deployed on GitHub Pages |
-| **February 2026** | Created this README |
-| **March 2026** | Added all 9 certifications |
-| **Future** | Continuous improvements! |
+**I promise to:**
+
+✅ Keep learning web development best practices  
+✅ Clean up this repository structure (coming soon!)  
+✅ Write better, more organized code  
+✅ Document my progress and learnings  
+✅ Help other beginners when I can  
+✅ Never stop improving  
+
+**Check back in a few months** — I guarantee this repository will look MUCH better! 🚀
 
 ---
 
-## ⭐ Support
+## 📊 Progress Tracker
 
-If you found this project helpful or inspiring (especially if you're also a beginner), consider:
-
-- ⭐ **Giving it a star** on GitHub
-- 🍴 **Forking it** to build your own portfolio
-- 📢 **Sharing it** with other students learning web dev
-- 💬 **Opening an issue** with feedback or suggestions
+| Skill Level | January 2026 | March 2026 | Goal (June 2026) |
+|-------------|--------------|------------|------------------|
+| HTML | Beginner | Intermediate | Intermediate+ |
+| CSS | Beginner | Intermediate | Advanced |
+| JavaScript | None | Beginner | Intermediate |
+| Git/GitHub | None | Beginner | Intermediate |
+| Project Organization | None | Beginner | Intermediate |
 
 ---
 
 <div align="center">
 
-### 🌟 "The best time to start was yesterday. The next best time is now." 🌟
+## 🌟 "Everyone starts somewhere. This is my somewhere." 🌟
 
-**Built with 💙 by Gian Carlo**
+**Built with 💙 and lots of Stack Overflow searches by Gian Carlo**
 
-*A Computer Engineering student learning to code, one project at a time.*
+*A Computer Engineering student learning web development, one messy commit at a time.* 😂
 
-[![GitHub followers](https://img.shields.io/github/followers/yourusername?style=social)](https://github.com/yourusername)
-[![Twitter Follow](https://img.shields.io/twitter/follow/yourusername?style=social)](https://twitter.com/yourusername)
+[![GitHub followers](https://img.shields.io/github/followers/trillesgian29-cpu?style=social)](https://github.com/trillesgian29-cpu)
+
+---
+
+### ⭐ If this inspired you as a fellow beginner, give it a star!
+
+**Let's learn together!** 🚀
+
+---
+
+**Last Updated:** March 10, 2026  
+**Status:** Active Development | Improving Daily
 
 </div>
 
 ---
 
-## 📜 Version History
+## 🎯 Final Thoughts
 
-- **v1.0** (February 2026) — Initial release, first deployment
-- **v1.1** (March 2026) — Added all certifications, fixed mobile responsiveness
-- **Future** — Ongoing improvements and learning!
+This portfolio isn't perfect. The code isn't perfect. The file structure definitely isn't perfect.
 
----
+**But it's REAL.** It's **MY FIRST PROJECT**. And I **SHIPPED IT**.
 
-**Last Updated:** March 10, 2026
+That's what matters.
 
----
+I could have waited until I knew more. I could have obsessed over making it perfect before publishing. But instead, I **built something real**, put it out there, and I'm learning by doing.
 
-## 🐛 Known Issues
+**To other beginners:** Your first project doesn't have to be perfect. Just get it out there. You'll learn more from shipping messy code than from never shipping at all.
 
-I'm keeping track of things I know need fixing:
-
-- [ ] Some CSS could be more organized
-- [ ] JavaScript could use better commenting
-- [ ] File structure could be cleaner
-- [ ] Some images need optimization
-- [ ] Contact form needs backend integration
-- [ ] Need to add proper alt text for accessibility
-
-**I'm working on these!** Learning takes time, but I'm committed to doing it right. 💪
+**To potential employers/OJT supervisors:** Yes, I'm a beginner. But I'm a beginner who ships, learns, documents, and improves. That's the kind of developer I'm becoming.
 
 ---
 
-<div align="center">
+**Now go check out the live site and let me know what you think!** 👇
 
-**Thank you for visiting my portfolio repository!**
+👉 **[Visit My Portfolio](https://trillesgian29-cpu.github.io/portfolio)**
 
-*If you're also learning web development, I'm rooting for you. We all start somewhere.* 🌱
-
-**Let's grow together!** 🚀
-
-</div>
+---

@@ -1,6 +1,6 @@
 # 🚀 Gian Carlo - Computer Engineering Portfolio
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-blue?style=for-the-badge)](https://trillesgian29-cpu.github.io/portfolio)
+[![Live Demo](https://trillesgian29-cpu.github.io/MyyPortfolio/)
 [![Status](https://img.shields.io/badge/Status-In%20Development-orange?style=for-the-badge)](#-current-status--roadmap)
 [![First Project](https://img.shields.io/badge/First-Web%20Project-yellow?style=for-the-badge)]()
 

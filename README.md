@@ -212,13 +212,7 @@ Proof I don't just study — I earn credentials:
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=trillesgian29-cpu&layout=compact&theme=github_dark&hide_border=true)](trillesgian29-cpu)
 
-<sub>🚀 Building projects • Learning in public • Growing every day</sub>
-
 </div>
-
----
----
-
 ---
 
 ## 🙏 Acknowledgments

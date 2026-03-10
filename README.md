@@ -210,7 +210,7 @@ Proof I don't just study — I earn credentials:
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=trillesgian29-cpu&show_icons=true&theme=github_dark&hide_border=true&count_private=true)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=trillesgian29-cpu&layout=compact&theme=github_dark&hide_border=true)](https://github.com/trillesgian29-cpu)
+[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=trillesgian29-cpu&layout=compact&theme=github_dark&hide_border=true)](Gian Carlo Trilles)
 
 </div>
 

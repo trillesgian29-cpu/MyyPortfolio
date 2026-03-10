@@ -194,11 +194,11 @@ Proof I don't just study — I earn credentials:
 
 **Ready to discuss OJT opportunities?**
 
-📧 **Email:** youremail@example.com  
-💼 **LinkedIn:** [linkedin.com/in/yourusername](https://linkedin.com/in/yourusername)  
+📧 **Email:** trillesgian29@gmail.com  
+💼 **LinkedIn:** [linkedin.com/in/yourusername](www.linkedin.com/in/gian-trilles)  
 🐙 **GitHub:** [github.com/trillesgian29-cpu](https://github.com/trillesgian29-cpu)  
-🌐 **Portfolio:** [trillesgian29-cpu.github.io/portfolio](https://trillesgian29-cpu.github.io/portfolio)  
-📱 **Phone:** +63 9XX XXX XXXX
+🌐 **Portfolio:** [trillesgian29-cpu.github.io/portfolio]([https://trillesgian29-cpu.github.io/portfolio](https://trillesgian29-cpu.github.io/portfolio)  
+📱 **Phone:** +63 966 421 2170
 
 **Response time:** Usually within 24 hours. If it's about OJT opportunities, I'll respond even faster! ⚡
 
@@ -252,7 +252,7 @@ Big thanks to:
 
 **Let's build something amazing together!**
 
-[📧 Send me an email](mailto:youremail@example.com) • [💼 View my resume](./Gian_Carlo_OJT_Resume_1Page.pdf) • [🌐 Visit my portfolio](https://trillesgian29-cpu.github.io/portfolio)
+[📧 Send me an email](mailto:trillesgian29@gmsil.com) • [💼 View my resume](./Gian_Carlo_OJT_Resume_1Page.pdf) • [🌐 Visit my portfolio](https://trillesgian29-cpu.github.io/portfolio)
 
 </div>
 

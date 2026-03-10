@@ -67,36 +67,40 @@ Here's what makes me a solid OJT candidate:
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 
-### **What I'm Good At:**
+### **What I'm Good At**
 
 **💡 Embedded Systems & Hardware**
 - Arduino, Raspberry Pi, ESP32/ESP8266
-- GPIO, PWM, sensor integration, servo control
-- Real-time programming, interrupt handling
+- GPIO, PWM, sensor integration, servo/motor control
+- Real-time programming, interrupt handling, microcontroller prototyping
+- PCB design and sensor interfacing for applied AI projects
 
 **🌐 Software Development**
-- Python (data structures, OOP, scripting)
-- C/C++ (low-level programming, algorithms)
-- Web development (HTML/CSS/JS, responsive design)
-- Git/GitHub version control
+- Python (data structures, OOP, scripting, data analysis basics)
+- C/C++ (low-level programming, algorithms, embedded logic)
+- Web development (HTML, CSS, JavaScript, responsive design)
+- Git/GitHub version control, repo structuring, README formatting
 
 **🔌 Networking & IT**
-- TCP/IP, subnetting, VLAN configuration
-- Cisco Packet Tracer simulations
-- Network troubleshooting and design
+- TCP/IP fundamentals, subnetting, VLAN configuration
+- Routing protocols (Static, RIP, EIGRP, OSPF)
+- Cisco Packet Tracer simulations and routing table documentation
+- Network troubleshooting, design, and protocol implementation
 
-**🔧 Engineering Tools**
+**🔧 Engineering Tools & Productivity**
 - Circuit analysis (Multisim, Proteus)
-- MATLAB, AutoCAD, MS Office
-- Linux command line, VS Code
+- MATLAB for computation and simulation
+- AutoCAD for technical drawings
+- Linux command line for development workflows
+- VS Code for coding, debugging, and project organization
+- MS Office for documentation and reporting
 
----
 
 ## 🚀 Projects I've Built
 
-### 1️⃣ **This Portfolio Website** (You're looking at it!)
+### 1️⃣ **Portfolio Website** (You're looking at it!)
 **Tech:** HTML • CSS • JavaScript • GitHub Pages  
-Built a fully responsive portfolio from scratch with scroll animations, mobile navigation, and professional design. Deployed and live on GitHub Pages.
+Built a fully responsive portfolio from scratch with scroll animations, mobile navigation, and professional design. Deployed live on GitHub Pages.
 
 **What I learned:** Responsive design, DOM manipulation, Git workflows, web deployment
 
@@ -104,7 +108,7 @@ Built a fully responsive portfolio from scratch with scroll animations, mobile n
 
 ### 2️⃣ **Drag Race Traffic Light System** (Arduino)
 **Tech:** Arduino • C++ • GPIO • PWM • Embedded Systems  
-Programmed a professional Christmas Tree countdown system with precise timing control, button interface, and buzzer feedback.
+Programmed a Christmas Tree countdown system with precise timing control, button interface, and buzzer feedback for drag race simulation.
 
 **What I learned:** Real-time embedded programming, hardware interfacing, timing-critical applications
 
@@ -114,23 +118,52 @@ Programmed a professional Christmas Tree countdown system with precise timing co
 **Tech:** Cisco Packet Tracer • VLAN • Routing • Subnetting  
 Designed and simulated a multi-VLAN enterprise network with inter-VLAN routing, ACLs, and VLSM subnetting. Verified end-to-end connectivity.
 
-**What I learned:** Enterprise networking, IP addressing, network security, troubleshooting
+**What I learned:** Enterprise networking, IP addressing, routing protocols, troubleshooting
 
 ---
 
-## 🏆 Certifications (9 Total)
+### 4️⃣ **PCB Design in EasyEDA**
+**Tech:** EasyEDA • Circuit Design • PCB Layout  
+Created and simulated PCB designs for embedded projects, applying schematic capture and layout best practices.
+
+**What I learned:** PCB design workflow, schematic-to-layout translation, design validation
+
+---
+
+### 5️⃣ **Power Supply Project**
+**Tech:** Circuit Design • Multisim • Proteus  
+Designed and tested a regulated power supply circuit, ensuring stable voltage output for embedded systems.
+
+**What I learned:** Circuit simulation, voltage regulation, practical electronics
+
+---
+
+### 6️⃣ **Business Permit Tracker**
+**Tech:** HTML • CSS • JavaScript • Excel Integration  
+Developed a web-based permit tracker with Excel dataset integration, allowing barangay-level business permit management.
+
+**What I learned:** Web app development, data handling, user interface design
+
+---
+
+👉 See all of these projects live at my [Portfolio Website](https://trillesgian29-cpu.github.io/MyyPortfolio/)
+
+## 🏆 Certifications (12 Total)
 
 Proof I don't just study — I earn credentials:
 
-- ✅ **Python Essentials 1** — DICT Sorsogon
+- ✅ **Python Essentials 1** — DICT Sorsogon  
 - ✅ **C++ Essentials 1** — C++ Institute  
-- ✅ **Cisco Packet Tracer** — Cisco Networking Academy
-- ✅ **Network Addressing & Troubleshooting** — DICT-ITU DTC
-- ✅ **Mobile Technology Fundamentals** — DICT Region 2
-- ✅ **AI for Daily Use** — Albay AI Institute
-- ✅ **Work Smarter with AI** — DICT CAR ILCDB
-- ✅ **ICpEP BYTE2025 Congress** — National CPE Student Congress
-- ✅ **Electronic Communication & Technology** — Technical Webinar
+- ✅ **Cisco Packet Tracer** — Cisco Networking Academy  
+- ✅ **Network Addressing & Troubleshooting** — DICT-ITU DTC  
+- ✅ **Mobile Technology Fundamentals** — DICT Region 2  
+- ✅ **AI for Daily Use** — Albay AI Institute  
+- ✅ **Work Smarter with AI** — DICT CAR ILCDB  
+- ✅ **ICpEP BYTE2025 Congress** — National CPE Student Congress  
+- ✅ **Electronic Communication & Technology** — Technical Webinar  
+- ✅ **Introduction to Data Science** — DICT Training  
+- ✅ **Data Analytics Essentials** — DICT Training  
+- 📖 **Introduction to Embedded Design** — Alison (completed course, certificate to be claimed in future)
 
 **All earned independently** while managing full-time Computer Engineering coursework.
 
@@ -149,7 +182,7 @@ Proof I don't just study — I earn credentials:
 **Next steps:** Learning proper project structure, separating CSS/JS files, and following web dev best practices. This repo will look much cleaner in a few months! 🧹
 
 ---
-👉 Check out my GitHub profile here: [@trillesgian29-cpu](https://github.com/trillesgian29-cpu)
+👉 Explore my full portfolio here  : [Portfolio Websit](https://github.com/trillesgian29-cpu)
 
 
 ## 🔥 What I'm Working On Right Now
@@ -186,7 +219,7 @@ Proof I don't just study — I earn credentials:
 - Real-world problem solving
 - Mentorship from experienced engineers
 
-**Location:** Flexible — Bicol Region preferred, but **open to remote OJT** anywhere in the Philippines or globally.
+**Location:** Open to all — available for onsite OJT placements locally or internationally, and also open to Virtual Assistant (VA) opportunities.
 
 ---
 

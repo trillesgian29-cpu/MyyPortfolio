@@ -145,6 +145,25 @@ Developed a web-based permit tracker with Excel dataset integration, allowing ba
 **What I learned:** Web app development, data handling, user interface design
 
 ---
+ ### 7️⃣ **Logic Circuits Experiments**
+**Tech:** Boolean Algebra • AutoCAD Simulation • IC Testing  
+Documented laboratory experiments starting from Boolean expressions. Constructed truth tables, designed logic circuits, simplified using Karnaugh Maps (K-map), converted designs into NAND-only implementations, and tested circuits with ICs in the lab.  
+
+**What I learned:** Digital logic design, circuit simplification, practical IC testing  
+
+---
+
+### 8️⃣ **Data Structures & Algorithms Machine Problems**
+**Tech:** Python • Flowcharts • Algorithm Design  
+Completed multiple machine problems (MPs) in Data Structures and Algorithms:  
+- **Sorting_MP2:** Implemented bubble, insertion, selection, merge, and quick sort with flowcharts, source code, and outputs.  
+- **Arrays_MP2:** Solved problems using 1D and 2D arrays.  
+- **Linked Lists_MP3:** Built singly, doubly, circular singly, and circular doubly linked lists.  
+- **Defective Machine Simulation:** Python program simulating a factory where machines produce items; identified a faulty machine producing an odd number of items.  
+
+**What I learned:** Algorithm implementation, problem-solving workflows, simulation design, debugging  
+
+---
 
 👉 See all of these projects live at my [Portfolio Website](https://trillesgian29-cpu.github.io/MyyPortfolio/)
 
